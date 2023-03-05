@@ -1,0 +1,12 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+}
+
+.app {
+    display: block;
+    position: relative;
+}

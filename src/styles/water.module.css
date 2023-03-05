@@ -1,0 +1,476 @@
+@font-face {
+    font-family: "LSANSD";
+    src: url("../assets/LSANSD.TTF") format("TTF"),
+}
+
+@media (max-width:1920px) {
+
+    .category_shadow {
+        border: 0.7px solid #d9d9d9;
+    }
+
+    .category_outside {
+        display: flex;
+        justify-content: center;
+        width: 20vw;
+        /* background-color: #fafafa; */
+        background-color: white;
+    }
+
+    .category {
+        width: 100%;
+        display: block;
+        margin: 65px 0px 0px 0px;
+    }
+
+    .category_member {
+        display: flex;
+        align-items: center;
+        margin: 38px 0px 0px 38px;
+        cursor: pointer;
+    }
+
+    .category_member_selfie {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 43px;
+        height: 43px;
+    }
+
+    .category_member_selfie>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
+
+    .category_member_name {
+        display: flex;
+        font-family: "Hind Madurai";
+        font-size: 20px;
+        font-weight: 700;
+        color: black;
+        letter-spacing: 1px;
+        margin-left: 11px;
+    }
+
+
+    .category_content {
+        display: flex;
+        margin-left: 40px;
+        margin-top: 15px;
+        font-family: Hind Madurai;
+        font-size: 20px;
+        font-weight: 700;
+        color: #a3a2a3;
+        letter-spacing: 3px;
+    }
+
+    .category_content_line_outside {
+        width: 20vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .category_content_line {
+        width: 16vw;
+        height: 0.5px;
+        background-color: #d9d9d9;
+        margin: 10px 0px 10px 0px;
+    }
+
+    .category_content_group_outside {
+        width: 14vw;
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 18px 10px 18px;
+        border-radius: 25px;
+    }
+
+    .category_content_group_outside:hover {
+        background-color: #ebebeb;
+        border: 1.8px solid #bbbdbc;
+    }
+
+    .category_content_group {
+        width: 11.6vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .category_content_group_image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .category_content_group_image>img {
+        height: 25px;
+        justify-content: center;
+    }
+
+    .category_content_group_text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 9.1vw;
+    }
+
+
+
+    .category_content_group_sport {
+        display: flex;
+        align-items: center;
+        font-family: msjhbd;
+        color: #2b2b2b;
+        letter-spacing: 1px;
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+
+    .category_content_group_type {
+        font-weight: 700;
+        font-size: 15px;
+        color: #a3a2a3;
+    }
+
+    .category_content_pullBall {
+        display: flex;
+        align-items: center;
+        padding: 0px;
+        border-width: 0px;
+    }
+
+    .category_content_pullBall>img {
+        width: 19px;
+        /* filter: drop-shadow(0.5px 0.5px 0.5px #707070) */
+    }
+
+    .category_content_all {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0px 8px 0px;
+        font-family: msjhbd;
+        font-size: 18px;
+        color: #2b2b2b;
+        letter-spacing: 2px;
+        font-weight: 500;
+    }
+
+    .category_content_all_ball {
+        margin: 0px 14px 0px 0px;
+        border: 0px;
+        background-color: white;
+        /* color: #f26e02; */
+        color: #bf500b;
+        font-size: 17px;
+        font-weight: 700;
+        padding: 2px 4px 2px 4px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_ball:hover {
+        /* background-color: #fac6a5; */
+        border: 1.6px solid #4a4a4a;
+    }
+
+    .category_content_all_water {
+        border: 0px;
+        background-color: #1306c4;
+        margin: 0px 14px 0px 0px;
+        padding: 2px 4px 2px 4px;
+        color: white;
+        font-size: 17px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_water:hover {
+        /* background-color: #d9deff; */
+        border: 1.6px solid #4a4a4a;
+
+    }
+
+    .category_content_all_outdoor {
+        border: 0px;
+        background-color: white;
+        margin: 0px 14px 0px 0px;
+        padding: 2px 4px 2px 4px;
+        color: #048741;
+        font-size: 17px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_outdoor:hover {
+        /* background-color: #c5fad1; */
+        border: 1.6px solid #4a4a4a;
+    }
+
+    .category_content_all_fitness {
+        border: 0px;
+        background-color: white;
+        color: #b809a0;
+        margin: 0px 14px 0px 0px;
+        padding: 2px 4px 2px 4px;
+        font-size: 17px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_fitness:hover {
+        /* background-color: #fcb3f4; */
+        border: 1.6px solid #4a4a4a;
+    }
+}
+
+
+@media (max-width:1535px) {
+
+    .category_shadow {
+        border: 0.7px solid #d9d9d9;
+    }
+
+    .category_outside {
+        display: flex;
+        justify-content: center;
+        width: 23vw;
+        /* background-color: #fafafa; */
+        background-color: white;
+    }
+
+    .category {
+        width: 100%;
+        display: block;
+    }
+
+    .category_member {
+        display: flex;
+        align-items: center;
+        margin: 38px 0px 0px 38px;
+        cursor: pointer;
+    }
+
+    .category_member_selfie {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 43px;
+        height: 43px;
+    }
+
+    .category_member_selfie>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
+
+    .category_member_name {
+        display: flex;
+        font-family: "Hind Madurai";
+        font-size: 20px;
+        font-weight: 700;
+        color: black;
+        letter-spacing: 1px;
+        margin-left: 11px;
+    }
+
+
+    .category_content {
+        display: flex;
+        margin-left: 40px;
+        margin-top: 12px;
+        font-family: "Hind Madurai";
+        font-size: 20px;
+        font-weight: 700;
+        color: #a3a2a3;
+        letter-spacing: 3px;
+    }
+
+    .category_content_line_outside {
+        width: 23vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .category_content_line {
+        width: 16vw;
+        height: 0.5px;
+        background-color: #d9d9d9;
+        margin: 10px 0px 10px 0px;
+    }
+
+    .category_content_group_outside {
+        width: 14vw;
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 18px 10px 18px;
+        border-radius: 25px;
+    }
+
+    .category_content_group_outside:hover {
+        background-color: #ebebeb;
+        border: 1.8px solid #bbbdbc;
+    }
+
+    .category_content_group {
+        width: 11.6vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .category_content_group_image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .category_content_group_image>img {
+        height: 25px;
+        justify-content: center;
+    }
+
+    .category_content_group_text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 9.1vw;
+    }
+
+
+
+    .category_content_group_sport {
+        display: flex;
+        align-items: center;
+        font-family: msjhbd;
+        color: #2b2b2b;
+        letter-spacing: 1px;
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+
+    .category_content_group_type {
+        font-weight: 700;
+        font-size: 15px;
+        color: #a3a2a3;
+    }
+
+    .category_content_pullBall {
+        display: flex;
+        align-items: center;
+        padding: 0px;
+        border-width: 0px;
+    }
+
+    .category_content_pullBall>img {
+        width: 19px;
+        /* filter: drop-shadow(0.5px 0.5px 0.5px #707070) */
+    }
+
+    .category_content_all {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0px 8px 0px;
+        font-family: "Hind Madurai";
+        font-size: 18px;
+        color: #2b2b2b;
+        letter-spacing: 2px;
+        font-weight: 500;
+    }
+
+    .category_content_all_ball {
+        margin: 0px 14px 0px 0px;
+        border: 0px;
+        background-color: white;
+        /* color: #f26e02; */
+        color: #bf500b;
+        font-size: 17px;
+        font-weight: 700;
+        padding: 2px 4px 2px 4px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_ball:hover {
+        /* background-color: #fac6a5; */
+        border: 1.6px solid #4a4a4a;
+    }
+
+    .category_content_all_water {
+        border: 0px;
+        background-color: #1306c4;
+        margin: 0px 14px 0px 0px;
+        padding: 2px 4px 2px 4px;
+        color: white;
+        font-size: 17px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_water:hover {
+        /* background-color: #d9deff; */
+        border: 1.6px solid #4a4a4a;
+
+    }
+
+    .category_content_all_outdoor {
+        border: 0px;
+        background-color: white;
+        margin: 0px 14px 0px 0px;
+        padding: 2px 4px 2px 4px;
+        color: #048741;
+        font-size: 17px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_outdoor:hover {
+        /* background-color: #c5fad1; */
+        border: 1.6px solid #4a4a4a;
+    }
+
+    .category_content_all_fitness {
+        border: 0px;
+        background-color: white;
+        color: #b809a0;
+        margin: 0px 14px 0px 0px;
+        padding: 2px 4px 2px 4px;
+        font-size: 17px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_fitness:hover {
+        /* background-color: #fcb3f4; */
+        border: 1.6px solid #4a4a4a;
+    }
+}

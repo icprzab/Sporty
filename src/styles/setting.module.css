@@ -1,0 +1,1191 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width:1920px) {
+    .homepage {
+        margin-left: 20vw;
+        width: 80vw;
+        height: calc(100%+52px);
+        display: flex;
+        position: relative;
+    }
+
+    .middle {
+        width: 80vw;
+        display: block;
+    }
+
+    .middle_head {
+        display: flex;
+        position: fixed;
+        background-color: #fafaeb;
+        z-index: 4;
+        filter: drop-shadow(0.6px 0.6px 0.6px #787d7b);
+        width: 100%;
+    }
+
+    .head {
+        margin-top: 49px;
+        width: 100%;
+        height: 63px;
+        display: flex;
+        width: 100vw;
+    }
+
+    .head_content {
+        display: flex;
+        align-items: center;
+        margin-left: 10vw;
+    }
+
+    .head_content_text1 {
+        font-family: "Hind Madurai";
+        font-size: 21px;
+        font-weight: 700;
+        color: #2b2b2b;
+        border-width: 0px;
+        letter-spacing: 1px;
+        margin-left: 10px;
+    }
+
+    .head_content_text2 {
+        border-width: 0px;
+        margin-left: 220px;
+        padding: 4px 6px 4px 6px;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 700;
+        color: #7d6305;
+        letter-spacing: 2px;
+        background-color: #fafaeb;
+        border-radius: 5px;
+    }
+
+    /* .head_content_text2:hover {
+        background-color: #deffe2;
+        border: 1.6px solid #9adba6
+    } */
+
+    .head_content_text3 {
+        border-width: 0px;
+        margin-left: 45px;
+        font-family: "Hind Madurai";
+        font-size: 18px;
+        font-weight: 400;
+        color: #6c7a6e;
+        letter-spacing: 2px;
+        background-color: #edfcf1;
+        padding: 4px 6px 4px 6px;
+        border-radius: 5px;
+    }
+
+    .head_content_text3:hover {
+        background-color: #deffe2;
+        border: 1.6px solid #9adba6
+    }
+
+    .head_content_img>img {
+        display: inline-block;
+        overflow: hidden;
+        height: 29px;
+    }
+
+    .head_content_heart>img {
+        margin: 3px 0px 0px 60px;
+        height: 20px;
+    }
+
+    .scrollbars {
+        width: 80vw;
+        height: 100%;
+    }
+
+    .all {
+        width: 100%;
+        display: block;
+        margin-top: 112px;
+    }
+
+    .under {
+        width: 100%;
+        display: flex;
+
+    }
+
+    .under_inside {
+        margin-left: 10vw;
+        display: block;
+        width: 48vw;
+        /* position: absolute;
+        z-index: 3;
+        top: 49px; */
+    }
+
+    .under_inside_content {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        border: 1.57px solid #a2a6a4;
+        border-radius: 8px;
+        margin: 22px 0px 22px 0px;
+        filter: drop-shadow(1px 1px 1px #5e5e5e)
+    }
+
+    .under_inside_content_account {
+        width: 29vw;
+        display: block;
+        margin: 0px 0px 60px 0px;
+    }
+
+    .under_inside_content_account_inside {
+
+        margin: 45px 0px 0px 0px;
+    }
+
+    .under_inside_content_account_title {
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 15px 0px 15px;
+    }
+
+    .under_inside_content_account_title_text {
+        font-size: 25px;
+        font-weight: 600;
+        font-family: "Hind Madurai";
+        color: #3d3d3d;
+        margin: 0px 0px 7px 0px;
+    }
+
+    .under_inside_content_account_title_button {
+        cursor: pointer;
+        height: 31px;
+        font-size: 16px;
+        font-family: "Hind Madurai";
+        letter-spacing: 0.3px;
+        background-color: #9c7b06;
+        color: white;
+        font-weight: 500;
+        padding: 4px 8px 4px 8px;
+        border-width: 0px;
+        border-radius: 6px;
+    }
+
+    .under_inside_content_account_line_outside {
+        display: flex;
+        align-items: center;
+    }
+
+    .under_inside_content_account_line {
+        width: 100%;
+        height: 0.5px;
+        background-color: #d9d9d9;
+    }
+
+    .under_inside_content_account_info_outside {
+        margin: 0px 15px 0px 15px;
+    }
+
+    .under_inside_content_account_info {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin: 22px 0px 0px 0px;
+    }
+
+    ::placeholder {
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+        padding: 10px 4px 0px 10px;
+        color: black;
+    }
+
+    .under_inside_content_account_intro {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin: 22px 0px 0px 0px;
+
+    }
+
+    .under_inside_content_account_text {
+        width: 90px;
+        font-size: 17px;
+        font-weight: 700;
+        font-family: "Hind Madurai";
+        color: #7a7a7a;
+    }
+
+    .under_inside_content_account_intro_text {
+        width: 90px;
+        font-size: 17px;
+        font-weight: 700;
+        font-family: "Hind Madurai";
+        color: #7a7a7a;
+        margin-top: 5px;
+    }
+
+    .under_inside_content_account_text1 {
+        line-height: 18px;
+    }
+
+    .under_inside_content_account_text2 {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .under_inside_content_account_text3 {
+        line-height: 20px;
+    }
+
+    .under_inside_content_account_text4 {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .under_inside_content_account_input {
+        width: 267px;
+        height: 25px;
+        padding: 0px;
+        border-radius: 3px;
+        border: 1px solid black;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        padding: 3px 0px 0px 10px;
+        color: black;
+    }
+
+    .under_inside_content_account_input_password {
+        width: 267px;
+        height: 25px;
+        padding: 0px;
+        border-radius: 3px;
+        border: 1px solid black;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        padding: 3px 0px 0px 10px;
+        color: black;
+    }
+
+    .under_inside_content_account_input_password::placeholder {
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+        padding: 10px 4px 0px 0px;
+        color: black;
+    }
+
+    .under_inside_content_account_home {
+        width: 100%;
+        height: 25px;
+        padding: 0px;
+        border-radius: 3px;
+        border: 1px solid black;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        padding: 3px 0px 0px 10px;
+        color: black;
+    }
+
+    .under_inside_content_account_textarea1 {
+        width: 100%;
+        height: 100px;
+        padding: 0px;
+        border-radius: 3px;
+        border: 1px solid black;
+        resize: unset;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+        padding: 10px 4px 0px 10px;
+        color: black;
+    }
+
+    .under_inside_content_account_textarea2 {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+        min-height: 50px;
+        padding: 0px;
+        border-radius: 3px;
+        border: 1px solid black;
+        resize: vertical;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+        padding: 10px 4px 0px 10px;
+        color: black;
+    }
+
+    .under_inside_content_account_form {
+        display: flex;
+        width: 325px;
+        justify-content: space-between;
+    }
+
+    .under_inside_content_account_address {
+        display: flex;
+        margin-right: 162.5px;
+        width: 162.5px;
+    }
+
+    .under_inside_content_account_radio {
+        display: flex;
+        width: 325px;
+    }
+
+    .under_inside_content_account_radio_gender {
+        accent-color: #a3820b
+    }
+
+    .under_inside_content_account_button {
+        cursor: pointer;
+        height: 29.5px;
+        padding: 0px 4px 0px 4px;
+        border: 1px solid black;
+        border-radius: 3px;
+        font-size: 14px;
+        margin-left: 6px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #5c5c5c;
+    }
+
+    .under_inside_content_account_birth {
+        width: 150px;
+        height: 27px;
+        padding-left: 10px;
+        border-radius: 3px;
+        border: 1px solid black;
+    }
+
+    .under_inside_content_account_button_none {
+        height: 27px;
+        border-radius: 3px;
+        margin-left: 4.3px;
+        opacity: 0;
+
+    }
+
+    .under_inside_content_selfie {
+        margin-left: 28px;
+    }
+
+    .under_inside_content_selfie_text {
+        display: flex;
+        justify-content: center;
+        margin: 45px 0px 0px 0px;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        color: #3d3d3d;
+    }
+
+    .under_inside_content_selfie_img {
+        display: flex;
+        justify-content: center;
+        margin: 12px 0px 0px 0px;
+    }
+
+    .under_inside_content_selfie_img>img {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+    }
+
+    .under_inside_content_selfie_change {
+        display: grid;
+        justify-content: center;
+    }
+
+    .under_inside_content_selfie_button {
+        width: 80px;
+    }
+
+
+
+}
+
+
+@media (max-width:1535px) {
+    .homepage {
+        margin-left: 23vw;
+        width: 80vw;
+        height: 100vh;
+        display: flex;
+        position: relative;
+    }
+
+    .middle {
+        width: 80w;
+        display: block;
+    }
+
+    .middle_head {
+        display: flex;
+        position: fixed;
+        background-color: #fafaeb;
+        z-index: 4;
+        filter: drop-shadow(0.6px 0.6px 0.6px #787d7b);
+        width: 100%;
+    }
+
+    .head {
+        margin-top: 49px;
+        width: 100%;
+        height: 63px;
+        display: flex;
+        width: 100vw;
+    }
+
+    .head_content {
+        display: flex;
+        align-items: center;
+        margin-left: 10vw;
+    }
+
+    .head_content_text1 {
+        font-family: "Hind Madurai";
+        font-size: 21px;
+        font-weight: 700;
+        color: #2b2b2b;
+        border-width: 0px;
+        letter-spacing: 1px;
+        margin-left: 10px;
+    }
+
+    .head_content_text2 {
+        border-width: 0px;
+        margin-left: 180px;
+        padding: 4px 6px 4px 6px;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 700;
+        color: #7d6305;
+        letter-spacing: 2px;
+        background-color: #fafaeb;
+        border-radius: 5px;
+    }
+
+    .scrollbars {
+        width: 80vw;
+        height: 100%;
+    }
+
+    .all {
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin-top: 112px;
+    }
+
+
+    .under_inside {
+        margin-left: 10vw;
+        display: block;
+        width: 55vw;
+        /* position: absolute;
+        z-index: 3;
+        top: 49px; */
+    }
+
+    .under_inside_content {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        border: 1.57px solid #a2a6a4;
+        border-radius: 8px;
+        margin: 22px 0px 22px 0px;
+        filter: drop-shadow(1px 1px 1px #5e5e5e)
+    }
+
+    .under_inside_content_account {
+        width: 33vw;
+        display: block;
+        margin: 0px 0px 60px 0px;
+    }
+
+    .under_inside_content_account_inside {
+        margin: 45px 0px 0px 0px;
+    }
+
+    .under_inside_content_account_title {
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .under_inside_content_account_title_text {
+        font-size: 22.5px;
+        font-weight: 600;
+        font-family: "Hind Madurai";
+        color: #3d3d3d;
+        margin: 0px 0px 7px 15px;
+    }
+
+    .under_inside_content_account_title_button {
+        height: 31px;
+        font-size: 16px;
+        font-family: "Hind Madurai";
+        letter-spacing: 0.3px;
+        background-color: #9c7b06;
+        color: white;
+        font-weight: 500;
+        padding: 4px 8px 4px 8px;
+        border-width: 0px;
+        border-radius: 6px;
+    }
+
+    .under_inside_content_account_line_outside {
+        display: flex;
+        align-items: center;
+    }
+
+    .under_inside_content_account_line {
+        width: 100%;
+        height: 0.5px;
+        background-color: #d9d9d9;
+    }
+
+    .under_inside_content_account_info_outside {
+        margin: 0px 15px 0px 15px;
+    }
+
+    .under_inside_content_account_info {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin: 22px 0px 0px 0px;
+    }
+
+    ::placeholder {
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+        padding: 10px 4px 0px 10px;
+        color: black;
+    }
+
+    .under_inside_content_account_intro {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin: 22px 0px 0px 0px;
+
+    }
+
+    .under_inside_content_account_text {
+        width: 90px;
+        font-size: 17px;
+        font-weight: 700;
+        font-family: "Hind Madurai";
+        color: #7a7a7a;
+    }
+
+    .under_inside_content_account_intro_text {
+        width: 90px;
+        font-size: 17px;
+        font-weight: 700;
+        font-family: "Hind Madurai";
+        color: #7a7a7a;
+        margin-top: 5px;
+    }
+
+    .under_inside_content_account_text1 {
+        line-height: 18px;
+    }
+
+    .under_inside_content_account_text2 {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .under_inside_content_account_text3 {
+        line-height: 20px;
+    }
+
+    .under_inside_content_account_text4 {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .under_inside_content_account_input {
+        width: 267px;
+        height: 25px;
+        padding: 0px;
+        border-radius: 3px;
+        border: 1px solid black;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        padding: 3px 0px 0px 10px;
+        color: black;
+    }
+
+
+    .under_inside_content_account_textarea1 {
+        width: 100%;
+        height: 100px;
+        padding: 0px;
+        border-radius: 3px;
+        border: 1px solid black;
+        resize: unset;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+        padding: 10px 4px 0px 10px;
+        color: black;
+    }
+
+    .under_inside_content_account_textarea2 {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+        min-height: 50px;
+        padding: 0px;
+        border-radius: 3px;
+        border: 1px solid black;
+        resize: vertical;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+        padding: 10px 4px 0px 10px;
+        color: black;
+    }
+
+    .under_inside_content_account_form {
+        display: flex;
+        width: 325px;
+        justify-content: space-between;
+    }
+
+    .under_inside_content_account_address {
+        display: flex;
+        margin-right: 162.5px;
+        width: 162.5px;
+    }
+
+    .under_inside_content_account_radio {
+        display: flex;
+        width: 325px;
+    }
+
+    .under_inside_content_account_radio_gender {
+        accent-color: #a3820b
+    }
+
+    .under_inside_content_account_button {
+        height: 29.5px;
+        padding: 0px 4px 0px 4px;
+        border: 1px solid black;
+        border-radius: 3px;
+        font-size: 14px;
+        margin-left: 6px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #5c5c5c;
+    }
+
+    .under_inside_content_account_birth {
+        width: 150px;
+        height: 27px;
+        padding-left: 10px;
+        border-radius: 3px;
+        border: 1px solid black;
+    }
+
+    .under_inside_content_account_button_none {
+        height: 27px;
+        border-radius: 3px;
+        margin-left: 4.3px;
+        opacity: 0;
+
+    }
+
+    .under_inside_content_selfie {
+        margin-left: 28px;
+    }
+
+    .under_inside_content_selfie_text {
+        display: flex;
+        justify-content: center;
+        margin: 45px 0px 0px 0px;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        color: #3d3d3d;
+    }
+
+    .under_inside_content_selfie_img {
+        display: flex;
+        justify-content: center;
+        margin: 12px 0px 0px 0px;
+    }
+
+    .under_inside_content_selfie_img>img {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .under_inside_content_selfie_change {
+        display: grid;
+        justify-content: center;
+    }
+
+    .under_inside_content_selfie_button {
+        width: 80px;
+    }
+
+}
+
+
+@media (max-width:1380px) {
+    .homepage {
+        margin-left: 23vw;
+        width: 80vw;
+        height: 100vh;
+        display: flex;
+        position: relative;
+    }
+
+    .middle {
+        width: 80w;
+        display: block;
+    }
+
+    .middle_head {
+        display: flex;
+        position: fixed;
+        background-color: #fafaeb;
+        z-index: 4;
+        filter: drop-shadow(0.6px 0.6px 0.6px #787d7b);
+        width: 100%;
+    }
+
+    .head {
+        margin-top: 49px;
+        width: 100%;
+        height: 63px;
+        display: flex;
+        width: 100vw;
+    }
+
+    .head_content {
+        display: flex;
+        align-items: center;
+        margin-left: 10vw;
+    }
+
+    .head_content_text1 {
+        font-family: "Hind Madurai";
+        font-size: 21px;
+        font-weight: 700;
+        color: #2b2b2b;
+        border-width: 0px;
+        letter-spacing: 1px;
+        margin-left: 10px;
+    }
+
+    .head_content_text2 {
+        border-width: 0px;
+        margin-left: 180px;
+        padding: 4px 6px 4px 6px;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 700;
+        color: #7d6305;
+        letter-spacing: 2px;
+        background-color: #fafaeb;
+        border-radius: 5px;
+    }
+
+    .scrollbars {
+        width: 80vw;
+        height: 100%;
+    }
+
+    .all {
+        width: 100%;
+        display: block;
+        margin-top: 112px;
+    }
+
+    .under_inside_content {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        border: 1.57px solid #a2a6a4;
+        border-radius: 8px;
+        margin: 22px 0px 22px 0px;
+        filter: drop-shadow(1px 1px 1px #5e5e5e)
+    }
+
+    .under_inside_content_account {
+        width: 36vw;
+        display: block;
+        margin: 0px 0px 60px 0px;
+    }
+
+    .under_inside_content_account_inside {
+
+        margin: 45px 0px 0px 0px;
+    }
+
+    .under_inside_content_account_title {
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .under_inside_content_account_title_text {
+        font-size: 22.5px;
+        font-weight: 600;
+        font-family: "Hind Madurai";
+        color: #3d3d3d;
+        margin: 0px 0px 7px 15px;
+    }
+
+    .under_inside_content_account_title_button {
+        height: 31px;
+        font-size: 16px;
+        font-family: "Hind Madurai";
+        letter-spacing: 0.3px;
+        background-color: #9c7b06;
+        color: white;
+        font-weight: 500;
+        padding: 4px 8px 4px 8px;
+        border-width: 0px;
+        border-radius: 6px;
+    }
+
+    .under_inside_content_account_line_outside {
+        display: flex;
+        align-items: center;
+    }
+
+    .under_inside_content_account_line {
+        width: 100%;
+        height: 0.5px;
+        background-color: #d9d9d9;
+    }
+
+    .under_inside_content_account_info_outside {
+        margin: 0px 15px 0px 15px;
+    }
+
+    .under_inside_content_account_info {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin: 22px 0px 0px 0px;
+    }
+
+    ::placeholder {
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+        padding: 10px 4px 0px 10px;
+        color: black;
+    }
+
+    .under_inside_content_account_intro {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin: 22px 0px 0px 0px;
+
+    }
+
+    .under_inside_content_account_text {
+        width: 90px;
+        font-size: 17px;
+        font-weight: 700;
+        font-family: "Hind Madurai";
+        color: #7a7a7a;
+    }
+
+    .under_inside_content_account_intro_text {
+        width: 90px;
+        font-size: 17px;
+        font-weight: 700;
+        font-family: "Hind Madurai";
+        color: #7a7a7a;
+        margin-top: 5px;
+    }
+
+    .under_inside_content_account_text1 {
+        line-height: 18px;
+    }
+
+    .under_inside_content_account_text2 {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .under_inside_content_account_text3 {
+        line-height: 20px;
+    }
+
+    .under_inside_content_account_text4 {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .under_inside_content_account_input {
+        width: 267px;
+        height: 25px;
+        padding: 0px;
+        border-radius: 3px;
+        border: 1px solid black;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        padding: 3px 0px 0px 10px;
+        color: black;
+    }
+
+
+
+    .under_inside_content_account_textarea1 {
+        width: 100%;
+        height: 100px;
+        padding: 0px;
+        border-radius: 3px;
+        border: 1px solid black;
+        resize: unset;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+        padding: 10px 4px 0px 10px;
+        color: black;
+    }
+
+    .under_inside_content_account_textarea2 {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+        min-height: 50px;
+        padding: 0px;
+        border-radius: 3px;
+        border: 1px solid black;
+        resize: vertical;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+        padding: 10px 4px 0px 10px;
+        color: black;
+    }
+
+    .under_inside_content_account_form {
+        display: flex;
+        width: 325px;
+        justify-content: space-between;
+    }
+
+    .under_inside_content_account_address {
+        display: flex;
+        margin-right: 162.5px;
+        width: 162.5px;
+    }
+
+    .under_inside_content_account_radio {
+        display: flex;
+        width: 325px;
+    }
+
+    .under_inside_content_account_radio_gender {
+        accent-color: #a3820b
+    }
+
+    .under_inside_content_account_button {
+        height: 29.5px;
+        padding: 0px 4px 0px 4px;
+        border: 1px solid black;
+        border-radius: 3px;
+        font-size: 14px;
+        margin-left: 6px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #5c5c5c;
+    }
+
+    .under_inside_content_account_birth {
+        width: 150px;
+        height: 27px;
+        padding-left: 10px;
+        border-radius: 3px;
+        border: 1px solid black;
+    }
+
+    .under_inside_content_account_button_none {
+        height: 27px;
+        border-radius: 3px;
+        margin-left: 4.3px;
+        opacity: 0;
+
+    }
+
+    .under_inside_content_selfie {
+        margin-left: 28px;
+    }
+
+    .under_inside_content_selfie_text {
+        display: flex;
+        justify-content: center;
+        margin: 45px 0px 0px 0px;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        color: #3d3d3d;
+    }
+
+    .under_inside_content_selfie_img {
+        display: flex;
+        justify-content: center;
+        margin: 12px 0px 0px 0px;
+    }
+
+    .under_inside_content_selfie_img>img {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .under_inside_content_selfie_change {
+        display: grid;
+        justify-content: center;
+    }
+
+    .under_inside_content_selfie_button {
+        width: 80px;
+    }
+
+}
+
+@media (max-width:1270px) {
+
+    .homepage {
+        margin-left: 32vw;
+        width: 68vw;
+        height: 100vh;
+        display: flex;
+        position: relative;
+    }
+
+    .middle {
+        width: 68w;
+        display: block;
+    }
+
+    .head_content {
+        display: flex;
+        align-items: center;
+        margin-left: 7vw;
+    }
+
+
+    .under_inside {
+        margin-left: 7vw;
+        display: block;
+        width: 68vw;
+        /* position: absolute;
+        z-index: 3;
+        top: 49px; */
+    }
+
+
+
+    .under_inside_content_account {
+        width: 45vw;
+        display: block;
+        margin: 0px 0px 60px 0px;
+    }
+
+    .under_inside_content_selfie {
+        margin-left: 32px;
+    }
+
+}
+
+
+@media (max-width:1020px) {
+
+    .homepage {
+        margin-left: 32vw;
+        width: 68vw;
+        height: 100vh;
+        display: flex;
+        position: relative;
+    }
+
+    .middle {
+        width: 68w;
+        display: block;
+    }
+
+    .head_content {
+        display: flex;
+        align-items: center;
+        margin-left: 7vw;
+    }
+
+
+    .under_inside {
+        margin-left: 7vw;
+        display: block;
+        width: 68vw;
+        /* position: absolute;
+        z-index: 3;
+        top: 49px; */
+    }
+
+
+
+    .under_inside_content_account {
+        width: 45vw;
+        display: block;
+        margin: 0px 0px 60px 0px;
+    }
+
+    .under_inside_content_selfie {
+        margin-left: 32px;
+    }
+
+
+
+}

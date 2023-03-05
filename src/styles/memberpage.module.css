@@ -1,0 +1,873 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width:1920px) {
+    .homepage {
+        width: 80vw;
+        height: calc(100%-52px);
+        display: flex;
+        position: relative;
+    }
+
+    .middle {
+        width: 80w;
+        height: calc(100vh-117px);
+        display: block;
+    }
+
+    .middle_head {
+        position: fixed;
+        z-index: 4;
+        filter: drop-shadow(0.6px 0.6px 0.6px #787d7b)
+    }
+
+
+    .head {
+        margin-top: 49px;
+        background-color: #edf5fc;
+        width: 100%;
+        height: 63px;
+        display: flex;
+        width: 100vw;
+    }
+
+    .head_content {
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+    }
+
+    .head_content_text1 {
+        font-family: "Hind Madurai";
+        font-size: 21px;
+        font-weight: 700;
+        color: #2b2b2b;
+        border-width: 0px;
+        letter-spacing: 1px;
+        margin-left: 10px;
+    }
+
+    .head_content_text2 {
+        border-width: 0px;
+        margin-left: 200px;
+        padding: 4px 6px 4px 6px;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 700;
+        color: #05317d;
+        letter-spacing: 2px;
+        background-color: #edf5fc;
+        border-radius: 5px;
+    }
+
+    .head_content_text2:hover {
+        background-color: #def1ff;
+        border: 1.6px solid #9ad3d6
+    }
+
+    .head_content_text3 {
+        border-width: 0px;
+        margin-left: 45px;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 400;
+        color: #6c7a7a;
+        letter-spacing: 2px;
+        background-color: #edf5fc;
+        padding: 4px 6px 4px 6px;
+        border-radius: 5px;
+    }
+
+    .head_content_text3:hover {
+        background-color: #def1ff;
+        border: 1.6px solid #9ad3d6
+    }
+
+    .head_content>img {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+    }
+
+    .head_content_heart {
+        margin: 3px 0px 0px 60px;
+        width: 24px;
+
+    }
+
+
+    .form_search {
+        display: flex;
+        margin-left: 100px;
+    }
+
+    .form_search_input_outside {
+        width: 180px;
+        height: 27px;
+        border: 2px solid#9ad0db;
+        border-radius: 0px 15px 15px 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    .form_search_input {
+        display: flex;
+        align-items: center;
+        height: 24px;
+        width: 167px;
+        border-width: 0px;
+        border-radius: 0px 15px 15px 0px;
+        padding: 0px 0px 0px 13px;
+        background-color: white;
+        caret-color: black;
+        color: #386f7a;
+        font-size: 14px;
+        /* box-shadow: 1px 1px 3px #5e5e5e; */
+    }
+
+    .form_search_input:focus {
+        /* outline: 0.5px solid white; */
+        outline: none;
+    }
+
+    .form_search_input::placeholder {
+        padding: 10px 0px 0px 0px;
+        font-size: 14px;
+        color: #386f7a;
+        position: relative;
+        top: 1px;
+        letter-spacing: 1.2px;
+    }
+
+    .form_search_button_outside {
+        width: 27px;
+        height: 27px;
+        border: 2px solid#9ad0db;
+        border-radius: 15px 0px 0px 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .form_search_button {
+        width: 33px;
+        height: 27px;
+        padding: 0px;
+        border-width: 0px;
+        background-color: #9ad0db;
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        border-radius: 12px 0px 0px 12px;
+        cursor: pointer;
+        /* box-shadow: 1px 1px 3px #5e5e5e; */
+    }
+
+    .form_search_button>img {
+        width: 15px;
+        margin-left: 8px;
+
+        /* filter: brightness(0); */
+        /* filte
+        r: brightness(100); */
+    }
+
+    .scrollbars {
+        width: 80vw;
+    }
+
+    .under {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+
+    .under_left {
+        width: 45vw;
+        display: block;
+        position: absolute;
+        z-index: 3;
+        top: 112px;
+
+    }
+
+    .under_left_content {
+        width: 560px;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        border: 1.57px solid #a2a6a4;
+        border-radius: 8px;
+        margin: 22px 0px 22px 110px;
+        filter: drop-shadow(1px 1px 1px #5e5e5e)
+    }
+
+    .under_left_content_inside {
+        width: 90%;
+        display: block;
+        margin: 15px 0px 10px 0px;
+    }
+
+    .under_left_title {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .under_left_selfie {
+        display: flex;
+        align-items: center;
+    }
+
+    .under_left_selfie>img {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+    }
+
+    .under_left_top {
+        display: flex;
+        font-family: "Hind Madurai";
+        margin-top: 6px;
+        letter-spacing: 1px;
+    }
+
+
+    .under_left_bookmark {
+        width: 18px;
+    }
+
+    .under_left_date {
+        font-size: 15px;
+        margin: 3px 16px 0px 0px;
+        color: #7e807f
+    }
+
+    .under_left_name {
+        font-family: "Hind Madurai";
+        margin-left: 10px;
+        font-size: 18px;
+        font-weight: 700;
+        color: black;
+        letter-spacing: 1px;
+    }
+
+    .under_left_text_all {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+    }
+
+    .under_left_text {
+        font-size: 15px;
+        margin-left: 0px;
+        display: flex;
+    }
+
+    .under_left_text_image {
+        margin-top: 50px;
+        width: 15px;
+        margin-bottom: 8px;
+
+        /* background-color: #ebebeb;
+    border-radius: 5px; */
+    }
+
+
+    .under_left_image>img {
+        width: 100%;
+        border: 0.5px solid #858585;
+    }
+
+
+    .under_left_message {
+        display: flex;
+    }
+
+    .under_left_icons {
+        display: block;
+    }
+
+    .under_left_icons_like {
+        margin: 12px 0px 0px 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    .under_left_icons_text1 {
+        font-family: "Hind Madurai";
+        margin: 3px 0px 0px 5px;
+        letter-spacing: 0.4px;
+    }
+
+    .under_left_icons_text2 {
+        font-family: "Hind Madurai";
+        margin: 0px 0px 5px 5px;
+        letter-spacing: 0.4px;
+    }
+
+
+    .under_left_icons_like>img {
+        height: 21px;
+    }
+
+    .under_left_icons_comment {
+        margin: 20px 12px 12px 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    .under_left_icons_comment>img {
+        height: 21px;
+    }
+
+    .under_left_comment_all {
+        display: block;
+        margin: 10px 0px 0px 0px;
+    }
+
+    .under_left_comment_all {
+        display: flex;
+    }
+
+    .under_left_comment_member {
+        margin-bottom: 10px;
+        display: flex;
+    }
+
+    .under_left_comment_member_title {
+        margin-left: 4px;
+        display: block;
+    }
+
+    .under_left_comment_image {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #232323;
+        border-radius: 50%;
+        width: 33px;
+        height: 33px;
+        color: black;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .under_left_comment_image>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
+
+    .under_left_comment_name {
+        font-family: "Hind Madurai";
+        font-size: 15px;
+        font-weight: 700;
+        color: black;
+        margin: 0px 0px 0px 5px;
+        letter-spacing: 0.5px;
+
+    }
+
+    .under_left_comment_message {
+        width: 350px;
+        font-family: "Hind Madurai";
+        font-size: 15px;
+        font-weight: 400;
+        color: black;
+        margin: 0px 0px 0px 3px;
+    }
+
+    .under_left_comment_line {
+        width: 350px;
+
+    }
+
+    .under_left_comment_line_inside {
+        width: 350px;
+        height: 0.5px;
+        background-color: #d9d9d9;
+        margin: 10px 0px 10px 50px;
+
+    }
+
+    .under_left_button {
+        padding: 0px;
+        margin: 10px 0px 0px 17px;
+    }
+
+    .under_left_button>img {
+        width: 34px;
+    }
+
+
+    .under_right {
+        background-color: white;
+        border: 1.57px solid #a2a6a4;
+        border-radius: 8px;
+        filter: drop-shadow(1px 1px 1px #5e5e5e);
+        width: 24vw;
+        display: block;
+        position: fixed;
+        margin: 134px 0px 0px 703px;
+
+    }
+
+    .under_right_rules {
+        font-family: "Hind Madurai";
+        margin: 20px;
+    }
+
+    .under_right_rules_line {
+        width: 100%;
+        height: 0.5px;
+        background-color: #d9d9d9;
+        margin: 5px 0px 5px 0px;
+    }
+}
+
+
+@media (max-width:1535px) {
+    .homepage {
+        width: 77vw;
+        height: calc(100%-52px);
+        display: flex;
+        position: relative;
+    }
+
+    .middle {
+        width: 77vw;
+        height: calc(100vh-117px);
+        display: block;
+    }
+
+    .middle_head {
+        position: fixed;
+        z-index: 4;
+        filter: drop-shadow(0.6px 0.6px 0.6px #787d7b)
+    }
+
+
+    .head {
+        margin-top: 49px;
+        background-color: #edf5fc;
+        width: 77vw;
+        height: 63px;
+        display: flex;
+    }
+
+    .head_content {
+        display: flex;
+        align-items: center;
+    }
+
+    .head_content_text1 {
+        font-family: "Hind Madurai";
+        font-size: 21px;
+        font-weight: 700;
+        color: #2b2b2b;
+        border-width: 0px;
+        letter-spacing: 1px;
+        margin-left: 10px;
+    }
+
+    .head_content_text2 {
+        display: flex;
+        justify-content: center;
+        border-width: 0px;
+        margin-left: 200px;
+        padding: 4px 6px 4px 6px;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 700;
+        color: #05317d;
+        letter-spacing: 2px;
+        background-color: #edf5fc;
+        border-radius: 5px;
+    }
+
+    .head_content_text2:hover {
+        background-color: #def1ff;
+        border: 1.6px solid #9ad3d6
+    }
+
+    .head_content_text3 {
+        border-width: 0px;
+        margin-left: 45px;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 400;
+        color: #6c7a7a;
+        letter-spacing: 2px;
+        background-color: #edf5fc;
+        padding: 4px 6px 4px 6px;
+        border-radius: 5px;
+    }
+
+    .head_content_text3:hover {
+        background-color: #def1ff;
+        border: 1.6px solid #9ad3d6
+    }
+
+    .head_content>img {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+    }
+
+    .head_content_heart {
+        margin: 3px 0px 0px 60px;
+        width: 24px;
+
+    }
+
+
+    .form_search {
+        display: flex;
+        margin-left: 100px;
+    }
+
+    .form_search_input_outside {
+        width: 180px;
+        height: 27px;
+        border: 2px solid#9ad0db;
+        border-radius: 0px 15px 15px 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    .form_search_input {
+        display: flex;
+        align-items: center;
+        height: 24px;
+        width: 167px;
+        border-width: 0px;
+        border-radius: 0px 15px 15px 0px;
+        padding: 0px 0px 0px 13px;
+        background-color: white;
+        caret-color: black;
+        color: #386f7a;
+        font-size: 14px;
+        /* box-shadow: 1px 1px 3px #5e5e5e; */
+    }
+
+    .form_search_input:focus {
+        /* outline: 0.5px solid white; */
+        outline: none;
+    }
+
+    .form_search_input::placeholder {
+        padding: 10px 0px 0px 0px;
+        font-size: 14px;
+        color: #386f7a;
+        position: relative;
+        top: 1px;
+        letter-spacing: 1.2px;
+    }
+
+    .form_search_button_outside {
+        width: 27px;
+        height: 27px;
+        border: 2px solid#9ad0db;
+        border-radius: 15px 0px 0px 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .form_search_button {
+        width: 33px;
+        height: 27px;
+        padding: 0px;
+        border-width: 0px;
+        background-color: #9ad0db;
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        border-radius: 12px 0px 0px 12px;
+        cursor: pointer;
+
+        /* box-shadow: 1px 1px 3px #5e5e5e; */
+    }
+
+    .form_search_button>img {
+        width: 15px;
+        margin-left: 8px;
+        /* filter: brightness(0); */
+        /* filter: brightness(100); */
+    }
+
+    .scrollbars {
+        width: 77vw;
+    }
+
+    .under {
+        width: 100%;
+        height: calc(100vh);
+        display: flex;
+    }
+
+
+    .under_left {
+        width: 45vw;
+        display: block;
+        position: absolute;
+        z-index: 3;
+
+
+    }
+
+    .under_left_content {
+        width: 560px;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        border: 1.57px solid #a2a6a4;
+        border-radius: 8px;
+        margin: 22px 0px 22px 110px;
+        filter: drop-shadow(1px 1px 1px #5e5e5e)
+    }
+
+    .under_left_content_inside {
+        width: 90%;
+        display: block;
+        margin: 15px 0px 10px 0px;
+    }
+
+    .under_left_title {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .under_left_selfie {
+        display: flex;
+        align-items: center;
+    }
+
+    .under_left_selfie>img {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+    }
+
+    .under_left_top {
+        display: flex;
+        font-family: "Hind Madurai";
+        margin-top: 6px;
+        letter-spacing: 1px;
+    }
+
+
+    .under_left_bookmark {
+        width: 18px;
+    }
+
+    .under_left_date {
+        font-size: 15px;
+        margin: 3px 16px 0px 0px;
+        color: #7e807f
+    }
+
+    .under_left_name {
+        font-family: "Hind Madurai";
+        margin-left: 10px;
+        font-size: 18px;
+        font-weight: 700;
+        color: black;
+        letter-spacing: 1px;
+    }
+
+    .under_left_text_all {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+    }
+
+    .under_left_text {
+        font-size: 15px;
+        margin-left: 0px;
+        display: flex;
+    }
+
+    .under_left_text_image {
+        margin-top: 50px;
+        width: 15px;
+        margin-bottom: 8px;
+
+        /* background-color: #ebebeb;
+    border-radius: 5px; */
+    }
+
+
+    .under_left_image>img {
+        width: 100%;
+        border: 0.5px solid #858585;
+    }
+
+
+    .under_left_message {
+        display: flex;
+    }
+
+    .under_left_icons {
+        display: block;
+    }
+
+    .under_left_icons_like {
+        margin: 12px 0px 0px 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    .under_left_icons_text1 {
+        font-family: "Hind Madurai";
+        margin: 3px 0px 0px 5px;
+        letter-spacing: 0.4px;
+    }
+
+    .under_left_icons_text2 {
+        font-family: "Hind Madurai";
+        margin: 0px 0px 5px 5px;
+        letter-spacing: 0.4px;
+    }
+
+
+    .under_left_icons_like>img {
+        height: 21px;
+    }
+
+    .under_left_icons_comment {
+        margin: 20px 12px 12px 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    .under_left_icons_comment>img {
+        height: 21px;
+    }
+
+    .under_left_comment_all {
+        display: block;
+        margin: 10px 0px 0px 0px;
+    }
+
+    .under_left_comment_all {
+        display: flex;
+    }
+
+    .under_left_comment_member {
+        margin-bottom: 10px;
+        display: flex;
+    }
+
+    .under_left_comment_member_title {
+        margin-left: 4px;
+        display: block;
+    }
+
+    .under_left_comment_image {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #232323;
+        border-radius: 50%;
+        width: 33px;
+        height: 33px;
+        color: black;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .under_left_comment_image>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
+
+    .under_left_comment_name {
+        font-family: "Hind Madurai";
+        font-size: 15px;
+        font-weight: 700;
+        color: black;
+        margin: 0px 0px 0px 5px;
+        letter-spacing: 0.5px;
+
+    }
+
+    .under_left_comment_message {
+        width: 350px;
+        font-family: "Hind Madurai";
+        font-size: 15px;
+        font-weight: 400;
+        color: black;
+        margin: 0px 0px 0px 3px;
+    }
+
+    .under_left_comment_line {
+        width: 350px;
+
+    }
+
+    .under_left_comment_line_inside {
+        width: 350px;
+        height: 0.5px;
+        background-color: #d9d9d9;
+        margin: 10px 0px 10px 50px;
+
+    }
+
+    .under_left_button {
+        padding: 0px;
+        margin: 10px 0px 0px 17px;
+    }
+
+    .under_left_button>img {
+        width: 34px;
+    }
+
+
+    .under_right {
+        background-color: white;
+        border: 1.57px solid #a2a6a4;
+        border-radius: 8px;
+        filter: drop-shadow(1px 1px 1px #5e5e5e);
+        width: 24vw;
+        display: block;
+        position: fixed;
+        margin: 134px 0px 0px 703px;
+
+    }
+
+    .under_right_rules {
+        font-family: "Hind Madurai";
+        margin: 20px;
+    }
+
+    .under_right_rules_line {
+        width: 100%;
+        height: 0.5px;
+        background-color: #d9d9d9;
+        margin: 5px 0px 5px 0px;
+    }
+}

@@ -1,0 +1,72 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.listPage {
+    display: block;
+    width: 80vw;
+    height: 100vh;
+}
+
+.form {
+    display: block;
+}
+
+.inputOutside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0px 20px 0px;
+}
+
+.input {
+    height: 28px;
+    padding: 0px 0px 0px 10px;
+    border-width: 1px;
+    border-color: black;
+}
+
+.button {
+    margin-left: 10px;
+    height: 30px;
+}
+
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #e3e3e3;
+}
+
+.buttonOutside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonReturn {
+    margin: 30px 0px 0px 0px;
+    height: 30px;
+}
+
+.messageOutside {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.message {
+    display: block;
+    font-size: 30px;
+}
+
+.messageInside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    margin: 15px;
+}
