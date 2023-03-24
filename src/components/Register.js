@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Register.css";
-import background from "../assets/sportybackground.png"
+import background from "../assets/background.jpg"
 import logo from "../assets/logo.png"
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";

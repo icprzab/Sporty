@@ -27,14 +27,17 @@ import { AuthContext } from "../../context/Authcontext"
 import { imageContext } from "../../context/imageContext"
 import { NameContext } from "../../context/NameContext"
 import { GroupContext } from "../../context/GroupContext"
+import { PageContext } from "../../context/Pagecontext"
 function Category() {
     const { group, setGroup } = useContext(GroupContext);
     const { userName, setUserName } = useContext(NameContext);
+    const { page, setPage } = useContext(PageContext);
     const [user, setUser] = useState([]);
     const [brown, setBrown] = useState([]);
     const [blue, setBlue] = useState(false);
     const [green, setGreen] = useState(false);
     const [purple, setPurple] = useState(false);
+    const [displayPost, setDisplayPost] = useState(false);
     const { value, setValue } = useContext(dataContext);
     const { url, setUrl } = useContext(imageContext);
     // let lists = []
@@ -69,7 +72,12 @@ function Category() {
     function groupName(data) {
         localStorage.setItem("type", data)
         setGroup(data)
+        setPage(true)
         navigate("/Hiking")
+    }
+    function Me() {
+        setPage(true)
+        navigate("/Mypage")
     }
 
     function ball() {
@@ -89,12 +97,11 @@ function Category() {
     }
 
 
-    return <div className={styles.category_shadow}>
-
+    return <div className={page ? "category_shadow active" : "category_shadow"} >
         <div className={styles.category_outside}>
             <Scrollbars style={{ width: "100%", height: "100vh" }}>
                 <div className={styles.category}>
-                    <div className={styles.category_member} onClick={() => { navigate("/Mypage") }}>
+                    <div className={styles.category_member} onClick={Me}>
                         <div className={styles.category_member_selfie}>
                             <img src={url}></img>
                         </div>

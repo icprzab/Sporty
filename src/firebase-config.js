@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage"
 import avatar from "./assets/member.png"
+
 const firebaseConfig = {
 
 }
@@ -72,7 +73,7 @@ export const createUserDocument = async (user, username, userPassword) => {
         const { name } = username;
         const { password } = userPassword;
         try {
-            setDoc(userDoc, { Name: name, Email: email, Password: password, createAt: serverTimestamp(), About: null, BirthDay: null, City: null, Gender: null, Intro: null, avatar: null })
+            setDoc(userDoc, { Name: name, Email: email, Password: password, createAt: serverTimestamp(), About: "我的封面簡介", BirthDay: null, City: null, Gender: null, Intro: "我的自我介紹", avatar: null })
         }
 
         catch (error) {

@@ -91,7 +91,6 @@ function Setting() {
             updateEmail(auth.currentUser, email).then(() => {
                 const update = doc(db, "users", getUser)
                 updateDoc(update, { "Email": email })
-                console.log("更新成功")
                 e.preventDefault();
                 // Email updated!
                 // ...
@@ -114,7 +113,6 @@ function Setting() {
                     if (oldPassword === response.data().Password) {
                         setAuthPassword(true)
                         e.preventDefault();
-                        console.log("驗證成功")
                     }
                 })
         }
@@ -128,7 +126,6 @@ function Setting() {
             const auth = getAuth();
             const user = auth.currentUser;
             updatePassword(user, newPassword).then(() => {
-                console.log("更新成功")
 
                 const update = doc(db, "users", getUser)
                 updateDoc(update, { "Password": newPassword })
@@ -186,58 +183,76 @@ function Setting() {
     }
 
     const handleSubmit = () => {
-        uploadBytes(imageRef, image)
-            .then(() => {
-                getDownloadURL(imageRef)
-                    .then((URL) => {
-                        setUrl(URL);
-                        const imageRef1 = doc(db, "users", getUser)
-                        updateDoc(imageRef1, { "avatar": URL })
-                        const imageRef2 = collection(db, "users", getUser, "post")
-                        getDocs(imageRef2)
-                            .then(response => {
-                                const userInfo = response.docs.map(doc => ({
-                                    id: doc.id,
-                                }))
-                                for (let i = 0; i <= userInfo.length - 1; i++) {
-                                    const docRef = doc(db, "users", getUser, "post", userInfo[i].id)
-                                    updateDoc(docRef, { "avatar": URL })
-                                }
-                            });
+        if (image != null) {
+            uploadBytes(imageRef, image)
+                .then(() => {
+                    getDownloadURL(imageRef)
+                        .then((URL) => {
+                            setUrl(URL);
+                            const imageRef1 = doc(db, "users", getUser)
+                            updateDoc(imageRef1, { "avatar": URL })
+                            const imageRef2 = collection(db, "users", getUser, "post")
+                            getDocs(imageRef2)
+                                .then(response => {
+                                    const userInfo = response.docs.map(doc => ({
+                                        id: doc.id,
+                                    }))
+                                    for (let i = 0; i <= userInfo.length - 1; i++) {
+                                        const docRef = doc(db, "users", getUser, "post", userInfo[i].id)
+                                        updateDoc(docRef, { "avatar": URL })
+                                    }
+                                });
 
-                        const imageRef3 = collectionGroup(db, "comment")
-                        const q = query(imageRef3, where("uid", "==", getUser))
-                        getDocs(q)
-                            .then(response => {
-                                const userInfo2 = response.docs.map(doc => ({
-                                    post: doc.data().post,
-                                    postUser: doc.data().postUser,
-                                    id: doc.id,
-                                }))
-                                for (let i = 0; i <= userInfo2.length - 1; i++) {
-                                    const docRef2 = doc(db, "users", userInfo2[i].postUser, "post", userInfo2[i].post, "comment", userInfo2[i].id)
-                                    updateDoc(docRef2, { "avatar": URL })
-                                }
-                            });
-                        // const batch = writeBatch(db);
-                        // const batch = db.batch();
-                        // const postCollectionRef = collection(db, "users", getUser, "post")
-                        // batch.set(postCollectionRef, { URL: URL });
+                            const imageRef3 = collectionGroup(db, "comment")
+                            const q = query(imageRef3, where("uid", "==", getUser))
+                            getDocs(q)
+                                .then(response => {
+                                    const userInfo2 = response.docs.map(doc => ({
+                                        ...doc.data(),
+                                        id: doc.id,
+                                    }))
+                                    for (let i = 0; i <= userInfo2.length - 1; i++) {
+                                        console.log(userInfo2[i].postUser, userInfo2[i].post, userInfo2[i].id)
+                                        const docRef2 = doc(db, "users", userInfo2[i].postUser, "post", userInfo2[i].post, "comment", userInfo2[i].id)
+                                        updateDoc(docRef2, { "avatar": URL })
+                                    }
+                                });
 
-                        // const postCollectionRef = collectionGroup(db, "post")
-                        // const q = query(postCollectionRef, where("Name", "==", "Zora Wu"))
-                        // updateDoc(q, { URL: url })
-                        // onSnapshot(q, (snapshot) =>
-                        //     updateDoc(snapshot.docs.map(
-                        //         doc => ({
-                        //             url: { url }
-                        //         })
-                        //     ))
-                        // )
-                    }).catch((error) => { console.log(error.message, "error getting the URL") })
-                setImage(null);
-            })
-            .catch((error) => { console.log(error.message) })
+                            const collectionPost = collectionGroup(db, "Collect")
+                            const collectionQuery = query(collectionPost, where("postUser", "==", getUser))
+                            getDocs(collectionQuery)
+                                .then(response => {
+                                    const collectionInfo = response.docs.map(doc => ({
+                                        ...doc.data(),
+                                        id: doc.id,
+                                    }))
+                                    for (let i = 0; i <= collectionInfo.length - 1; i++) {
+                                        console.log(collectionInfo[i].uid, collectionInfo[i].id)
+                                        const collectionRef2 = doc(db, "users", collectionInfo[i].uid, "Collect", collectionInfo[i].id)
+                                        updateDoc(collectionRef2, { "avatar": URL })
+                                    }
+                                });
+
+                            // const batch = writeBatch(db);
+                            // const batch = db.batch();
+                            // const postCollectionRef = collection(db, "users", getUser, "post")
+                            // batch.set(postCollectionRef, { URL: URL });
+
+                            // const postCollectionRef = collectionGroup(db, "post")
+                            // const q = query(postCollectionRef, where("Name", "==", "Zora Wu"))
+                            // updateDoc(q, { URL: url })
+                            // onSnapshot(q, (snapshot) =>
+                            //     updateDoc(snapshot.docs.map(
+                            //         doc => ({
+                            //             url: { url }
+                            //         })
+                            //     ))
+                            // )
+                        }).catch((error) => { console.log(error.message, "error getting the URL") })
+                    setImage(null);
+                })
+                .catch((error) => { console.log(error.message) })
+        }
     }
 
 
@@ -259,6 +274,7 @@ function Setting() {
 
     let navigate = useNavigate()
     return <div className={styles.homepage}>
+
         < div className={styles.middle}>
             <div className={styles.middle_head}>
                 <div className={styles.head}>
@@ -271,6 +287,7 @@ function Setting() {
                 </div>
                 <div className={styles.middle_content}></div>
             </div>
+            <div className={styles.background}></div>
             <div className={styles.scrollbars}>
                 <div style={{ width: "100%", height: "100%", backgroundColor: "#edf0ee" }} >
                     {/* <Scrollbars style={{ width: "100%", height: "100vh", backgroundColor: "#edf0ee", }} > */}
@@ -288,7 +305,7 @@ function Setting() {
                                             </div>
                                             <div className={styles.under_inside_content_account_info_outside}>
                                                 <div className={styles.under_inside_content_account_info}>
-                                                    <div className={styles.under_inside_content_account_text}>姓名:</div>
+                                                    <div className={styles.under_inside_content_account_text}>更新姓名:</div>
                                                     <form className={styles.under_inside_content_account_form} onSubmit={handleNameChange}>
                                                         <input className={styles.under_inside_content_account_input} value={name} onChange={inputName}></input>
                                                         <button className={styles.under_inside_content_account_button} type="submit">更新</button>
@@ -296,7 +313,7 @@ function Setting() {
                                                 </div>
                                                 <div className={styles.under_inside_content_account_info}>
                                                     <div className={styles.under_inside_content_account_text}>
-                                                        <div className={styles.under_inside_content_account_text1}>帳號:</div>
+                                                        <div className={styles.under_inside_content_account_text1}>更新帳號:</div>
                                                         <div className={styles.under_inside_content_account_text2}>( email )</div>
                                                     </div>
                                                     <form className={styles.under_inside_content_account_form} onSubmit={handleEmailChange}>
@@ -307,7 +324,7 @@ function Setting() {
                                                 <div className={styles.under_inside_content_account_info}>
                                                     <div className={styles.under_inside_content_account_text}>密碼驗證:</div>
                                                     <form className={styles.under_inside_content_account_form} onSubmit={passwordAuthentication}>
-                                                        <input className={styles.under_inside_content_account_input_password} placeholder={"請輸入舊密碼驗證後，再更新密碼"} value={oldPassword} onChange={inputOldPassword}></input>
+                                                        <input className={styles.under_inside_content_account_input_password} placeholder={"請輸入密碼驗證後，再更新密碼"} value={oldPassword} onChange={inputOldPassword}></input>
                                                         <button className={styles.under_inside_content_account_button} type="submit">驗證</button>
                                                     </form>
                                                 </div>
@@ -373,13 +390,18 @@ function Setting() {
                                     </div>
                                     <div className={styles.under_inside_content_selfie}>
                                         <div className={styles.under_inside_content_selfie_text}>更換大頭貼</div>
-                                        <div className={styles.under_inside_content_selfie_img}><img src={url}></img></div>
-                                        <div className={styles.under_inside_content_selfie_change}>
-                                            <label className={styles.under_inside_content_selfie_input} onChange={handleImageChange}>
-                                                <input type="file" />
-                                                選取照片
-                                            </label>
-                                            <button className={styles.under_inside_content_selfie_button} onClick={handleSubmit}>更換照片</button>
+                                        <div className={styles.under_inside_content_selfie_line_outside}>
+                                            <div className={styles.under_inside_content_selfie_line}></div>
+                                        </div>
+                                        <div className={styles.under_inside_content_selfie_inside}>
+                                            <div className={styles.under_inside_content_selfie_img}><img src={url}></img></div>
+                                            <div className={styles.under_inside_content_selfie_change}>
+                                                <label className={styles.under_inside_content_selfie_input} onChange={handleImageChange}>
+                                                    <input type="file" />
+                                                    選取照片
+                                                </label>
+                                                <button className={styles.under_inside_content_selfie_button} onClick={handleSubmit}>更換照片</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -390,6 +412,7 @@ function Setting() {
                 </div >
             </div>
         </div >
+
     </div >
 
 

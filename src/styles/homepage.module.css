@@ -17,7 +17,7 @@ body {
     .comment_outside {
         position: fixed;
         left: 29vw;
-        z-index: 5;
+        z-index: 7;
         width: 42vw;
         height: 100vh;
         background-color: white;
@@ -39,6 +39,32 @@ body {
         width: 450px;
     }
 
+    :global(.comment_close) {
+        display: none
+    }
+
+    :global(.comment_close.active) {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 30vw;
+    }
+
+    :global(.comment_close_img) {
+        display: none;
+    }
+
+    :global(.comment_close_img.active) {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
+
+
     :global(.comment_title) {
         display: none;
     }
@@ -52,6 +78,8 @@ body {
         font-family: "Hind Madurai";
         margin: 20px 0px 15px 0px;
     }
+
+
 
     .comment {
         display: block;
@@ -191,7 +219,7 @@ body {
         display: flex;
         position: fixed;
         background-color: #edfcf1;
-        z-index: 4;
+        z-index: 3;
         filter: drop-shadow(0.6px 0.6px 0.6px #787d7b);
         width: 100%;
     }
@@ -220,9 +248,13 @@ body {
         margin-left: 10px;
     }
 
+    .head_content_text {
+        margin-left: 3vw;
+    }
+
     .head_content_text2 {
         border-width: 0px;
-        margin-left: 120px;
+        margin-left: 45px;
         padding: 4px 6px 4px 6px;
         font-family: msjhbd;
         font-size: 18px;
@@ -356,7 +388,7 @@ body {
         display: block;
         margin-top: 112px;
         position: absolute;
-        z-index: 3
+        z-index: 2
     }
 
     .all_title {
@@ -820,6 +852,17 @@ body {
 
 
 @media (max-width:1535px) {
+
+    :global(.comment_close.active) {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 32vw;
+    }
+
     .homepage {
         margin-left: 23vw;
         width: 77vw;
@@ -837,7 +880,7 @@ body {
         display: flex;
         position: fixed;
         background-color: #edfcf1;
-        z-index: 4;
+        z-index: 3;
         filter: drop-shadow(0.6px 0.6px 0.6px #787d7b);
         width: 100%;
     }
@@ -867,7 +910,7 @@ body {
 
     .head_content_text2 {
         border-width: 0px;
-        margin-left: 120px;
+        margin-left: 45px;
         padding: 4px 6px 4px 6px;
         font-family: msjhbd;
         font-size: 18px;
@@ -1362,6 +1405,16 @@ body {
 
 
 @media (max-width:1420px) {
+    :global(.comment_close.active) {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 33vw;
+    }
+
     .homepage {
         margin-left: 23vw;
         width: 77vw;
@@ -1379,7 +1432,7 @@ body {
         display: flex;
         position: fixed;
         background-color: #edfcf1;
-        z-index: 4;
+        z-index: 3;
         filter: drop-shadow(0.6px 0.6px 0.6px #787d7b);
         width: 100%;
     }
@@ -1409,7 +1462,7 @@ body {
 
     .head_content_text2 {
         border-width: 0px;
-        margin-left: 120px;
+        margin-left: 45px;
         padding: 4px 6px 4px 6px;
         font-family: msjhbd;
         font-size: 18px;
@@ -1819,10 +1872,7 @@ body {
 
     .under_left_image>img {
         width: 100%;
-
     }
-
-
 
     .comment_all {
         display: block;
@@ -1905,6 +1955,25 @@ body {
 }
 
 @media (max-width:1270px) {
+    :global(.comment_close.active) {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 41vw;
+    }
+
+    .comment_outside {
+        position: fixed;
+        left: 23vw;
+        z-index: 5;
+        width: 54vw;
+        height: 100vh;
+        background-color: white;
+    }
+
     .under_right {
         display: none
     }
@@ -1920,5 +1989,624 @@ body {
     .middle {
         width: 68vw;
         display: block;
+    }
+
+
+    .under_left_content {
+        width: 560px;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        border: 1.57px solid #a2a6a4;
+        border-radius: 8px;
+        margin: 22px 0px 22px 0px;
+        filter: drop-shadow(1px 1px 1px #5e5e5e)
+    }
+}
+
+
+@media (max-width:1100px) {
+
+    :global(.comment_close.active) {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 46vw;
+    }
+
+    .comment_outside {
+        position: fixed;
+        left: 20vw;
+        z-index: 5;
+        width: 60vw;
+        height: 100vh;
+        background-color: white;
+    }
+
+    .under_right {
+        display: none
+    }
+
+    .homepage {
+        margin-left: 32vw;
+        width: 68vw;
+        height: calc(100%-52px);
+        display: flex;
+        position: relative;
+    }
+
+    .middle {
+        width: 68vw;
+        display: block;
+    }
+
+    .title_content_img>img {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+    }
+
+    .under_left_content {
+        width: 480px;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        border: 1.57px solid #a2a6a4;
+        border-radius: 8px;
+        margin: 22px 0px 22px 0px;
+        filter: drop-shadow(1px 1px 1px #5e5e5e)
+    }
+}
+
+
+
+@media (max-width:900px) {
+    :global(.comment_close.active) {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 53vw;
+    }
+
+    .comment_outside {
+        position: fixed;
+        left: 15vw;
+        z-index: 5;
+        width: 70vw;
+        height: 100vh;
+        background-color: white;
+    }
+
+    .under_right {
+        display: none
+    }
+
+    .homepage {
+        margin-left: 32vw;
+        width: 68vw;
+        height: calc(100%-52px);
+        display: flex;
+        position: relative;
+    }
+
+    .middle {
+        width: 68vw;
+        display: block;
+    }
+
+    .title_content_img>img {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+    }
+
+    .under_left_content {
+        width: 430px;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        border: 1.57px solid #a2a6a4;
+        border-radius: 8px;
+        margin: 22px 0px 22px 0px;
+        filter: drop-shadow(1px 1px 1px #5e5e5e)
+    }
+}
+
+
+
+@media (max-width:800px) {
+
+    :global(.comment_close.active) {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 70vw;
+    }
+
+    .comment_outside {
+        position: fixed;
+        left: 0vw;
+        z-index: 5;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+    }
+
+    .under_right {
+        display: none
+    }
+
+    .homepage {
+        margin-left: 32vw;
+        width: 68vw;
+        height: calc(100%-52px);
+        display: flex;
+        position: relative;
+    }
+
+    .middle {
+        width: 68vw;
+        display: block;
+    }
+
+    .title_content_img>img {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+    }
+
+    .under_left {
+        margin-left: 1px;
+        display: block;
+        /* position: absolute;
+        z-index: 3;
+        top: 49px; */
+
+    }
+
+    .under_left_content {
+        width: 68vw;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        border: 1.57px solid #a2a6a4;
+        border-radius: 8px;
+        margin: 22px 0px 22px 0px;
+        filter: drop-shadow(1px 1px 1px #5e5e5e)
+    }
+
+
+    .head_content_text1 {
+        font-family: "Hind Madurai";
+        font-size: 21px;
+        font-weight: 700;
+        color: #2b2b2b;
+        border-width: 0px;
+        letter-spacing: 1px;
+        margin-left: 10px;
+    }
+
+    .head_content_text2 {
+        border-width: 0px;
+        margin-left: 45px;
+        padding: 4px 6px 4px 6px;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 700;
+        color: #057d1b;
+        letter-spacing: 2px;
+        background-color: #edfcf1;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .head_content_text2:hover {
+        background-color: #deffe2;
+        border: 1.6px solid #9adba6;
+        cursor: pointer;
+    }
+
+    .head_content_text3 {
+        border-width: 0px;
+        margin-left: 45px;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 400;
+        color: #6c7a6e;
+        letter-spacing: 2px;
+        background-color: #edfcf1;
+        padding: 4px 6px 4px 6px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .head_content_text3:hover {
+        background-color: #deffe2;
+        border: 1.6px solid #9adba6;
+        cursor: pointer;
+    }
+}
+
+
+
+@media (max-width:700px) {
+
+    .head_content {
+        display: flex;
+        align-items: center;
+        margin-left: 3vw;
+    }
+
+    :global(.comment_close.active) {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 70vw;
+    }
+
+    .comment_outside {
+        position: fixed;
+        left: 0vw;
+        z-index: 5;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+    }
+
+
+    .under_right {
+        display: none
+    }
+
+    .homepage {
+        margin-left: 34vw;
+        width: 66vw;
+        height: calc(100%-52px);
+        display: flex;
+        position: relative;
+    }
+
+    .middle {
+        width: 66vw;
+        display: block;
+    }
+
+    .title_content_img>img {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+    }
+
+    .under_left {
+        margin-left: 1px;
+        display: block;
+        /* position: absolute;
+        z-index: 3;
+        top: 49px; */
+
+    }
+
+    .under_left_content {
+        width: 66vw;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        border: 1.57px solid #a2a6a4;
+        border-radius: 8px;
+        margin: 22px 0px 22px 0px;
+        filter: drop-shadow(1px 1px 1px #5e5e5e)
+    }
+
+
+    .head_content_text1 {
+        font-family: "Hind Madurai";
+        font-size: 21px;
+        font-weight: 700;
+        color: #2b2b2b;
+        border-width: 0px;
+        letter-spacing: 1px;
+        margin-left: 10px;
+    }
+
+    .head_content_text2 {
+        border-width: 0px;
+        margin-left: 3vw;
+        padding: 4px 6px 4px 6px;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 700;
+        color: #057d1b;
+        letter-spacing: 1px;
+        background-color: #edfcf1;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .head_content_text2:hover {
+        background-color: #deffe2;
+        border: 1.6px solid #9adba6;
+        cursor: pointer;
+    }
+
+    .head_content_text3 {
+        border-width: 0px;
+        margin-left: 3vw;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 400;
+        color: #6c7a6e;
+        letter-spacing: 1px;
+        background-color: #edfcf1;
+        padding: 4px 6px 4px 6px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .head_content_text3:hover {
+        background-color: #deffe2;
+        border: 1.6px solid #9adba6;
+        cursor: pointer;
+    }
+}
+
+
+
+@media (max-width:600px) {
+    :global(.comment_close.active) {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 75vw;
+    }
+
+    .comment_outside {
+        position: fixed;
+        left: 0vw;
+        z-index: 5;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+    }
+
+    .comment_line {
+        width: 80vw;
+    }
+
+    .comment_line_inside {
+        width: 100%;
+        height: 0.5px;
+        background-color: #d9d9d9;
+        margin: 10px 0px 10px 0px;
+    }
+
+    :global(.comment_textarea) {
+        display: none;
+    }
+
+    :global(.comment_textarea.active) {
+        display: flex;
+        width: 60vw;
+        resize: vertical;
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .under_right {
+        display: none
+    }
+
+    .homepage {
+        margin-left: 0vw;
+        width: 66vw;
+        height: calc(100%-52px);
+        display: flex;
+        position: relative;
+    }
+
+    .middle {
+        width: 100vw;
+        display: block;
+    }
+
+    .title_content_img>img {
+        display: inline-block;
+        overflow: hidden;
+        border: 0.5px solid #858585;
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+    }
+
+    .under_left {
+        margin-left: 1px;
+        display: block;
+        /* position: absolute;
+        z-index: 3;
+        top: 49px; */
+    }
+
+    .under_left_content {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        border: 1.57px solid #a2a6a4;
+        border-radius: 8px;
+        margin: 22px 0px 22px 0px;
+        filter: drop-shadow(1px 1px 1px #5e5e5e)
+    }
+
+
+    .head_content_text1 {
+        font-family: "Hind Madurai";
+        font-size: 21px;
+        font-weight: 700;
+        color: #2b2b2b;
+        border-width: 0px;
+        letter-spacing: 1px;
+        margin-left: 10px;
+    }
+
+    .head_content_text2 {
+        border-width: 0px;
+        margin-left: 6vw;
+        padding: 4px 6px 4px 6px;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 700;
+        color: #057d1b;
+        letter-spacing: 2px;
+        background-color: #edfcf1;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .head_content_text2:hover {
+        background-color: #deffe2;
+        border: 1.6px solid #9adba6;
+        cursor: pointer;
+    }
+
+    .head_content_text3 {
+        border-width: 0px;
+        margin-left: 6vw;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 400;
+        color: #6c7a6e;
+        letter-spacing: 2px;
+        background-color: #edfcf1;
+        padding: 4px 6px 4px 6px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .head_content_text3:hover {
+        background-color: #deffe2;
+        border: 1.6px solid #9adba6;
+        cursor: pointer;
+    }
+
+    .head_content_text {
+        margin-left: 10vw;
+    }
+}
+
+@media (max-width:500px) {
+    :global(.comment_close.active) {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 80vw;
+    }
+
+
+    .comment_line {
+        width: 80vw;
+    }
+
+    .comment_line_inside {
+        width: 100%;
+        height: 0.5px;
+        background-color: #d9d9d9;
+        margin: 10px 0px 10px 0px;
+    }
+
+    :global(.comment_textarea) {
+        display: none;
+    }
+
+    :global(.comment_textarea.active) {
+        display: flex;
+        width: 60vw;
+        resize: vertical;
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .comment_middle {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        margin-left: 7vw;
+    }
+
+    .head_content_text {
+        margin-left: 6vw;
+    }
+
+    .head_content_text2 {
+        border-width: 0px;
+        margin-left: 3vw;
+        padding: 4px 6px 4px 6px;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 700;
+        color: #057d1b;
+        letter-spacing: 2px;
+        background-color: #edfcf1;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .head_content_text2:hover {
+        background-color: #deffe2;
+        border: 1.6px solid #9adba6;
+        cursor: pointer;
+    }
+
+    .head_content_text3 {
+        border-width: 0px;
+        margin-left: 3vw;
+        font-family: msjhbd;
+        font-size: 18px;
+        font-weight: 400;
+        color: #6c7a6e;
+        letter-spacing: 2px;
+        background-color: #edfcf1;
+        padding: 4px 6px 4px 6px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .head_content_text3:hover {
+        background-color: #deffe2;
+        border: 1.6px solid #9adba6;
+        cursor: pointer;
     }
 }

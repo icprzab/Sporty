@@ -4,10 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { Scrollbars } from "react-custom-scrollbars-2"
 import { useState, useEffect } from "react";
 import search from "../assets/search4.png";
+import closeButton from "../assets/close.png"
 import me from "../assets/me2.jpg"
 import summit from "../assets/summit.jpg"
 import spread from "../assets/spread1.png"
 import like from "../assets/like.png"
+import unlike from "../assets/unlike.png"
 import comment from "../assets/comment.png"
 import member1 from "../assets/member1.jpg"
 import message from "../assets/message7.png"
@@ -35,6 +37,8 @@ function MyPage() {
     const { url, setUrl } = useContext(imageContext);
     const { userName, setUserName } = useContext(NameContext);
     const [displayComment, setDisplayComment] = useState(false);
+    const [mypostType, setMypostType] = useState(true);
+    const [collectType, setCollect] = useState(null);
     const [Comment, setComment] = useState([]);
     const [comments, setComments] = useState([]);
     const [commentInfo, setCommentInfo] = useState([]);
@@ -44,11 +48,15 @@ function MyPage() {
     function collect() {
         setOrder(CollectionRef)
         setMytype("Collect")
+        setMypostType(null)
+        setCollect(true)
     }
 
     function mypost() {
         setOrder(postCollectionRef)
         setMytype("post")
+        setMypostType(true)
+        setCollect(null)
     }
 
 
@@ -57,10 +65,13 @@ function MyPage() {
         getDoc(collectionRef)
             .then(response => {
                 if (response) {
-                    if (response.data().name) {
-                        updateDoc(collectionRef, { "name": null })
 
+                    if (response.data().Name) {
+                        updateDoc(collectionRef, { "Name": null })
                         const Collect_all = collectionGroup(db, "Collect")
+                        // let dic = posts
+                        // dic[e.order].like = e.like - 1;
+                        // setPosts(dic)
                         const q = query(Collect_all, where("post", "==", e.post))
                         getDocs(q)
                             .then(response => {
@@ -72,12 +83,15 @@ function MyPage() {
                                     const userCollectionRef = doc(db, "users", userInfo[i].uid, "Collect", userInfo[i].id)
                                     updateDoc(userCollectionRef, { "like": e.like - 1 })
                                 }
+                                // let dic = posts
+                                // dic[e.order].like = e.like - 1;
+                                // setPosts(dic)
                             });
+
                     }
 
-                    if (!response.data().name) {
-                        updateDoc(collectionRef, { "name": getUser })
-
+                    if (!response.data().Name) {
+                        updateDoc(collectionRef, { "Name": getUser })
                         const Collect_all = collectionGroup(db, "Collect")
                         const q = query(Collect_all, where("post", "==", e.post))
                         getDocs(q)
@@ -94,9 +108,12 @@ function MyPage() {
                     }
                 }
             }).catch((error) => {
-                if (error.message === "Cannot read properties of undefined (reading 'name')") {
+                if (error.message === "Cannot read properties of undefined (reading 'Name')") {
+                    // let dic3 = posts
+                    // dic3[e.order].like = e.like + 1;
+                    // setPosts(dic3)
                     const postCollectionRef3 = doc(db, `users/${e.uid}/${mytype}/${e.id}/like`, getUser);
-                    setDoc(postCollectionRef3, { name: getUser })
+                    setDoc(postCollectionRef3, { Name: getUser })
 
                     const Collect_all = collectionGroup(db, "Collect")
                     const q = query(Collect_all, where("post", "==", e.post))
@@ -119,21 +136,22 @@ function MyPage() {
             .then(response => {
                 const userPostRef = doc(db, "users", e.uid, "post", e.id)
                 if (response) {
-                    if (response.data().name) {
+                    if (response.data().Name) {
+
                         updateDoc(userPostRef, { "like": e.like - 1 })
-                        updateDoc(postRef, { "name": null })
+                        updateDoc(postRef, { "Name": null })
                     }
-                    if (!response.data().name) {
+                    if (!response.data().Name) {
                         updateDoc(userPostRef, { "like": e.like + 1 })
-                        updateDoc(postRef, { "name": getUser })
+                        updateDoc(postRef, { "Name": getUser })
                     }
                 }
             }).catch((error) => {
                 const userPostRef = doc(db, "users", e.uid, "post", e.id)
-                if (error.message === "Cannot read properties of undefined (reading 'name')") {
+                if (error.message === "Cannot read properties of undefined (reading 'Name')") {
                     const postRef3 = doc(db, `users/${e.uid}/post/${e.id}/like`, getUser);
                     updateDoc(userPostRef, { "like": e.like + 1 })
-                    setDoc(postRef3, { name: getUser })
+                    setDoc(postRef3, { Name: getUser })
                 }
             });
     }
@@ -150,13 +168,45 @@ function MyPage() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        if (comment) {
+        if (comment && (mytype === "Collect")) {
+            const addComment = doc(db, `users/${commentInfo.postUser}/post/${commentInfo.post}/comment`, v4());
+            setDoc(addComment, { avatar: url, Name: userName, createAt: serverTimestamp(), post: commentInfo.id, postUser: commentInfo.uid, uid: getUser, content: Comment })
+            const addCommentNumber = doc(db, "users", commentInfo.postUser, "post", commentInfo.post)
+            updateDoc(addCommentNumber, { "commentNumber": commentInfo.commentNumber + 1 })
+
+            const commentNumberRef = collectionGroup(db, "Collect")
+            const q2 = query(commentNumberRef, where("post", "==", commentInfo.post))
+            getDocs(q2)
+                .then(response => {
+                    const commentNumberInfo = response.docs.map(doc => ({
+                        uid: doc.data().uid,
+                        id: doc.id,
+                    }))
+                    for (let i = 0; i <= commentNumberInfo.length - 1; i++) {
+                        const commentNumberInfoRef = doc(db, "users", commentNumberInfo[i].uid, "Collect", commentNumberInfo[i].id)
+                        updateDoc(commentNumberInfoRef, { "commentNumber": commentInfo.commentNumber + 1 })
+                    }
+                });
+
+
+            const commentRef = collection(db, "users", commentInfo.postUser, "post", commentInfo.post, "comment")
+            const commentRender = query(commentRef, orderBy("createAt", "desc"))
+            getDocs(commentRender)
+                .then(response => {
+                    const userInfo = response.docs.map(doc => ({
+                        ...doc.data(),
+                        id: doc.id,
+                    }))
+                    setComments(userInfo)
+                });
+            setComment("");
+        }
+
+        if (comment && (mytype === "post")) {
             const addComment = doc(db, `users/${commentInfo.uid}/post/${commentInfo.id}/comment`, v4());
-            setDoc(addComment, { avatar: url, name: userName, createAt: serverTimestamp(), post: commentInfo.id, postUser: commentInfo.uid, uid: getUser, content: Comment })
+            setDoc(addComment, { avatar: url, Name: userName, createAt: serverTimestamp(), post: commentInfo.id, postUser: commentInfo.uid, uid: getUser, content: Comment })
             const addCommentNumber = doc(db, "users", commentInfo.uid, "post", commentInfo.id)
             updateDoc(addCommentNumber, { "commentNumber": commentInfo.commentNumber + 1 })
-            // console.log(commentInfo)
-            // console.log(commentInfo.id)
             const commentNumberRef = collectionGroup(db, "Collect")
             const q2 = query(commentNumberRef, where("post", "==", commentInfo.id))
             getDocs(q2)
@@ -170,7 +220,6 @@ function MyPage() {
                         updateDoc(commentNumberInfoRef, { "commentNumber": commentInfo.commentNumber + 1 })
                     }
                 });
-
 
             const commentRef = collection(db, "users", commentInfo.uid, "post", commentInfo.id, "comment")
             const q = query(commentRef, orderBy("createAt", "desc"))
@@ -216,8 +265,6 @@ function MyPage() {
                     //     updateDoc(docRef, { "avatar": URL })
                     // }
                 });
-
-
         }
         if (mytype === "Collect") {
             const commentPostRef = collection(db, "users", e.postUser, "post", e.id, "comment")
@@ -248,7 +295,7 @@ function MyPage() {
             .then(response => {
                 if (response) {
                     const getCollectName2 = doc(db, "users", getUser, "Collect", e.id)
-                    if (response.data().name) {
+                    if (response.data().Name) {
                         deleteDoc(getCollectName2);
                         const getLike = collection(db, "users", getUser, "post", e.id, "like")
                         getDocs(getLike)
@@ -258,7 +305,7 @@ function MyPage() {
                                 }))
                                 for (let i = 0; i <= userInfo.length - 1; i++) {
                                     const deleteLike = doc(db, `users/${getUser}/Collect/${e.id}/like`, userInfo[i].id);
-                                    deleteDoc(deleteLike, { name: userInfo[i].id })
+                                    deleteDoc(deleteLike, { Name: userInfo[i].id })
                                 }
                             });
 
@@ -271,18 +318,18 @@ function MyPage() {
                                 for (let i = 0; i <= deleteInfo.length - 1; i++) {
                                     const deleteComment = doc(db, `users/${getUser}/Collect/${e.id}/comment`, deleteInfo[i].id);
                                     deleteDoc(deleteComment, {
-                                        avatar: deleteInfo[i].avatar, name: deleteInfo[i].name, createAt: deleteInfo[i].createAt, post: deleteInfo[i].post, postUser: deleteInfo[i].postUser, uid: deleteInfo[i].uid, content: deleteInfo[i].content
+                                        avatar: deleteInfo[i].avatar, Name: deleteInfo[i].Name, createAt: deleteInfo[i].createAt, post: deleteInfo[i].post, postUser: deleteInfo[i].postUser, uid: deleteInfo[i].uid, content: deleteInfo[i].content
                                     })
                                 }
                             });
 
-                        updateDoc(getCollectName, { "name": null })
+                        updateDoc(getCollectName, { "Name": null })
                     }
-                    if (!response.data().name) {
-                        updateDoc(getCollectName, { "name": getUser })
-
+                    if (!response.data().Name) {
+                        updateDoc(getCollectName, { "Name": getUser })
+                        console.log(e)
                         const addCollect = doc(db, `users/${getUser}/Collect`, e.id);
-                        setDoc(addCollect, { post: e.id, Name: e.Name, avatar: e.avatar, content: e.content, like: e.like, type: e.type, createAt: e.createAt, picture: e.picture, pictureName: e.pictureName, uid: e.uid, commentNumber: e.commentNumber })
+                        setDoc(addCollect, { post: e.id, Name: e.Name, avatar: e.avatar, content: e.content, like: e.like, type: e.type, createAt: e.createAt, picture: e.picture, pictureName: e.pictureName, postUser: e.uid, uid: getUser, commentNumber: e.commentNumber, collect: "已收藏" })
                         const getLike = collection(db, "users", e.uid, "post", e.id, "like")
                         getDocs(getLike)
                             .then(response => {
@@ -291,7 +338,7 @@ function MyPage() {
                                 }))
                                 for (let i = 0; i <= userInfo.length - 1; i++) {
                                     const addLike = doc(db, `users/${getUser}/Collect/${e.id}/like`, userInfo[i].id);
-                                    setDoc(addLike, { name: userInfo[i].id })
+                                    setDoc(addLike, { Name: userInfo[i].id })
                                 }
                             });
 
@@ -304,18 +351,18 @@ function MyPage() {
                                 }))
                                 for (let i = 0; i <= commentInfo.length - 1; i++) {
                                     const addComment = doc(db, `users/${getUser}/Collect/${e.id}/comment`, commentInfo[i].id);
-                                    setDoc(addComment, { avatar: commentInfo[i].avatar, name: commentInfo[i].name, createAt: commentInfo[i].createAt, post: commentInfo[i].post, postUser: commentInfo[i].postUser, uid: commentInfo[i].uid, content: commentInfo[i].content })
+                                    setDoc(addComment, { avatar: commentInfo[i].avatar, Name: commentInfo[i].Name, createAt: commentInfo[i].createAt, post: commentInfo[i].post, postUser: commentInfo[i].postUser, uid: commentInfo[i].uid, content: commentInfo[i].content })
                                 }
                             });
                     }
                 }
             }).catch((error) => {
-                if (error.message === "Cannot read properties of undefined (reading 'name')") {
+                if (error.message === "Cannot read properties of undefined (reading 'Name')") {
                     const addCollectName = doc(db, `users/${e.uid}/post/${e.id}/collectName`, getUser);
-                    setDoc(addCollectName, { name: getUser })
+                    setDoc(addCollectName, { Name: getUser })
 
                     const addCollect = doc(db, `users/${getUser}/Collect`, e.id);
-                    setDoc(addCollect, { post: e.id, Name: e.Name, avatar: e.avatar, content: e.content, like: e.like, type: e.type, createAt: e.createAt, picture: e.picture, pictureName: e.pictureName, uid: e.uid, commentNumber: e.commentNumber })
+                    setDoc(addCollect, { post: e.id, Name: e.Name, avatar: e.avatar, content: e.content, like: e.like, type: e.type, createAt: e.createAt, picture: e.picture, pictureName: e.pictureName, postUser: e.uid, uid: getUser, commentNumber: e.commentNumber, collect: "已收藏" })
                     const getLike = collection(db, "users", e.uid, "post", e.id, "like")
                     getDocs(getLike)
                         .then(response => {
@@ -324,7 +371,7 @@ function MyPage() {
                             }))
                             for (let i = 0; i <= userInfo.length - 1; i++) {
                                 const addLike = doc(db, `users/${getUser}/Collect/${e.id}/like`, userInfo[i].id);
-                                setDoc(addLike, { name: userInfo[i].id })
+                                setDoc(addLike, { Name: userInfo[i].id })
                             }
                         });
                     const getComment = collection(db, "users", e.uid, "post", e.id, "comment")
@@ -336,7 +383,7 @@ function MyPage() {
                             }))
                             for (let i = 0; i <= commentInfo.length - 1; i++) {
                                 const addComment = doc(db, `users/${getUser}/Collect/${e.id}/comment`, commentInfo[i].id);
-                                setDoc(addComment, { avatar: commentInfo[i].avatar, name: commentInfo[i].name, createAt: commentInfo[i].createAt, post: commentInfo[i].post, postUser: commentInfo[i].postUser, uid: commentInfo[i].uid, content: commentInfo[i].content })
+                                setDoc(addComment, { avatar: commentInfo[i].avatar, Name: commentInfo[i].Name, createAt: commentInfo[i].createAt, post: commentInfo[i].post, postUser: commentInfo[i].postUser, uid: commentInfo[i].uid, content: commentInfo[i].content })
                             }
                         });
                 }
@@ -351,68 +398,29 @@ function MyPage() {
         });
 
         const q2 = query(order, orderBy("createAt", "desc"))
+
         const unsubscribe = onSnapshot(q2, (snapshot) => {
             const postInfo = snapshot.docs.map(doc => ({
                 ...doc.data(),
                 id: doc.id,
             }))
             setPosts(postInfo)
+            // let likePost = []
+            // for (let i = 0; i <= postInfo.length - 1; i++) {
+            //     const getLike = doc(db, "users", postInfo[i].uid, "post", postInfo[i].id, "like", getUser)
+            //     getDoc(getLike)
+            //         .then(response => {
+            //             likePost.push({ ...postInfo[i], likeName: response.data().Name })
+            //             setPosts(likePost)
+            //         }).catch((error) => {
+            //             if (error.message === "Cannot read properties of undefined (reading 'Name')") {
+            //                 likePost.push({ ...postInfo[i], likeName: null })
+            //                 setPosts(likePost)
+            //             }
+            //         });
+            // }
+
         })
-
-        // const q2 = query(order, orderBy("createAt", "desc"))
-        // const unsubscribe = onSnapshot(q2, (snapshot) => {
-        //     const postInfo = snapshot.docs.map(doc => ({
-        //         ...doc.data(),
-        //         id: doc.id,
-        //     }))
-        //     setPosts(postInfo);
-        // })
-
-        // return onSnapshot(query(
-        //     collection(db, "users", getUser, "post")
-        // ),
-        //     (snapshot2) => {
-        //         setPost(snapshot2.docs)
-        //     })
-
-        // getDocs(userCollectionRef)
-        //     .then(response => {
-        //         const userInfo = response.docs.map(doc => ({
-        //             // message: doc.data().message,
-        //             ...doc.data(),
-        //             id: doc.id
-        //         }))
-        //         setPosts(userInfo);
-        //     });
-
-        // snapshot.map(async (elem) => {
-        //     const workQ = query(collection(db, `users/B260otfvbfQ6GfR5zFViRzIfmEr1/post`))
-        //     const workDetails = await getDocs(workQ)
-        //     const workInfo = workDetails.docs.map((doc) => ({
-        //         ...doc.data(), id: doc.id
-        //     }))
-        //     setPost(workInfo)
-        // })
-        //     const unsubscribe = onSnapshot(userDoc, (snapshot) =>
-        //     getDoc(setUsers(snapshot.data()))
-        // );
-
-        // getDocs(userCollectionRef)
-        //     .then(response => {
-        //         const userInfo = response.docs.map(doc => ({
-        //             // message: doc.data().message,
-        //             ...doc.data(),
-        //             id: doc.id
-        //         }))
-        //         setPost(userInfo);
-        //     });
-
-        // getDoc(userDoc)
-        //         .then((response) => {
-        //             const data = response.data()
-        //             setUsers(data)
-        //         });
-
 
     }, [order]);
 
@@ -434,6 +442,9 @@ function MyPage() {
                 <div className={displayComment ? styles.comment_all : ""}>
                     <div className={displayComment ? styles.comment_middle : ""}>
                         <div className={displayComment ? styles.comment_middle_inside : ""}>
+                            <div className={displayComment ? "comment_close active" : "comment_close"} >
+                                <img className={displayComment ? "comment_close_img active" : "comment_close_img"} src={closeButton} onClick={closeComment}></img>
+                            </div>
                             <div className={displayComment ? "comment_title active" : "comment_title"}>所有留言</div>
 
                             <div className={displayComment ? styles.comment : ""}>
@@ -463,7 +474,7 @@ function MyPage() {
                                             <img className={displayComment ? "comment_image_img active" : "comment_image_img"} src={comment.avatar}></img>
                                         </div>
                                         <div className={displayComment ? styles.comment_member_title : ""}>
-                                            <div className={displayComment ? "comment_name active" : "comment_name"}>{comment.name}</div>
+                                            <div className={displayComment ? "comment_name active" : "comment_name"}>{comment.Name}</div>
                                             <div className={displayComment ? "comment_message active" : "comment_message"}>{comment.content}</div>
                                         </div>
                                     </div>
@@ -482,8 +493,10 @@ function MyPage() {
                             <div className={styles.head_content}>
                                 <img className={styles.head_content_hiking} src={url}></img>
                                 <div className={styles.head_content_text1}>{userName}</div>
-                                <button className={styles.head_content_text2} onClick={mypost}>我的貼文</button>
-                                <button className={styles.head_content_text3} onClick={collect}>收藏貼文</button>
+                                <div className={styles.head_content_text}>
+                                    <div className={mypostType ? styles.head_content_text2 : styles.head_content_text3} onClick={mypost}>我的貼文</div>
+                                    <div className={collectType ? styles.head_content_text2 : styles.head_content_text3} onClick={collect}>收藏貼文</div>
+                                </div>
                                 <div className={styles.form_search}>
                                     <div className={styles.form_search_button_outside}>
                                         <button className={styles.form_search_button} type="submit"><img src={search} /></button>
@@ -512,8 +525,14 @@ function MyPage() {
                                             </div>
 
                                             <div className={styles.title_content_right}>
-                                                <div className={styles.title_content_post} onClick={mypost}>我的貼文</div>
-                                                <div className={styles.title_content_collection} onClick={collect}>收藏貼文</div>
+                                                <div className={styles.title_content_post} onClick={mypost}>
+                                                    <div className={mypostType ? styles.title_content_post_inside : styles.title_content_post_inside2}>我的</div>
+                                                    <div className={mypostType ? styles.title_content_post_inside : styles.title_content_post_inside2}>貼文</div>
+                                                </div>
+                                                <div className={styles.title_content_collection} onClick={collect}>
+                                                    <div className={collectType ? styles.title_content_post_inside : styles.title_content_post_inside2}>收藏</div>
+                                                    <div className={collectType ? styles.title_content_post_inside : styles.title_content_post_inside2}>貼文</div>
+                                                </div>
                                                 {/* <div className={styles.title_content_search}>
                                                     <div className={styles.title_content_search_button_outside}>
                                                         <button className={styles.title_content_search_button} type="submit"><img src={search} /></button>
@@ -523,7 +542,6 @@ function MyPage() {
                                                     </div>
                                                 </div> */}
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -542,7 +560,6 @@ function MyPage() {
                                                         </div>
                                                         <div className={styles.under_left_top}>
                                                             <div className={styles.under_left_date}>{new Date(post.createAt.seconds * 1000).toLocaleDateString("zh-TW")}</div>
-
                                                         </div>
                                                     </div>
                                                     <div className={styles.under_left_text_all}>
@@ -557,7 +574,7 @@ function MyPage() {
                                                     <div className={styles.under_left_message}>
                                                         <div className={styles.under_left_icons}>
                                                             <div className={styles.under_left_icons_like} onClick={() => ThumbUp(post)}>
-                                                                <img src={like}></img>
+                                                                <img src={unlike}></img>
                                                                 <div className={styles.under_left_icons_text}>{post.like}</div>
                                                             </div>
                                                             <div className={styles.under_left_icons_comment} onClick={() => showComment(post)}>
@@ -570,33 +587,8 @@ function MyPage() {
                                                             </div>
                                                         </div>
                                                     </div>
-
-                                                    {/* <div className={styles.under_left_comment_all}>
-                                                    <div className={styles.under_left_comment}>
-                                                        <div className={styles.under_left_comment_member}>
-                                                            <div className={styles.under_left_comment_image} onClick={() => { navigate("/Member") }}><img src={member1}></img></div>
-                                                            <div className={styles.under_left_comment_member_title}>
-                                                                <div className={styles.under_left_comment_name}>我是喬八喬八是我</div>
-                                                                <div className={styles.under_left_comment_message}>請問沿路水源夠嗎?有需要多背幾瓶水上去嗎?</div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div className={styles.under_left_comment_line}>
-                                                            <div className={styles.under_left_comment_line_inside}></div>
-                                                        </div>
-                                                        <div className={styles.under_left_comment_member}>
-                                                            <div className={styles.under_left_comment_image}><img src={me}></img></div>
-                                                            <div className={styles.under_left_comment_member_title}>
-                                                                <div className={styles.under_left_comment_name}>Zora Wu</div>
-                                                                <div className={styles.under_left_comment_message}>@我是喬八喬八是我 基本上只要帶路上行走需要用的水，山屋水源很充足，只差不能洗澡而已</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> */}
-                                                    {/* <div className={styles.under_left_button}><img src={message}></img></div> */}
                                                 </div>
                                             </div>
-
                                         )}
 
                                     </div>

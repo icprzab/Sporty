@@ -12,17 +12,20 @@
 }
 
 .background {
+    display: flex;
     position: absolute;
     z-index: 9;
     width: 100vw;
     height: 100vh;
+    object-fit: cover;
 }
 
 .background>img {
     position: fixed;
-    width: 130%;
-    height: 130%;
     object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+
 }
 
 /* .left {

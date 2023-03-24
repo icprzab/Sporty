@@ -10,5 +10,5 @@ import kung_fu from "../assets/sport/fitness/kung_fu.png"
 import ice_skate from "../assets/sport/fitness/ice_skate.png"
 
 
-const fitness_all = [{ name: "健身", images: training, type: "健身" }, { name: "重訓", images: weight, type: "健身" }, { name: "拳擊", images: boxing, type: "健身" }, { name: "瑜珈", images: yoga, type: "健身" }, { name: "抱石", images: boulder, type: "健身" }, { name: "攀岩", images: climbing, type: "健身" }, { name: "跳舞", images: dancing, type: "健身" }, { name: "劍道", images: sword, type: "健身" }, { name: "武術", images: kung_fu, type: "健身" }, { name: "溜冰", images: ice_skate, type: "健身" },]
+const fitness_all = [{ name: "健身", images: weight, type: "健身" }, { name: "重訓", images: training, type: "健身" }, { name: "拳擊", images: boxing, type: "健身" }, { name: "瑜珈", images: yoga, type: "健身" }, { name: "抱石", images: boulder, type: "健身" }, { name: "攀岩", images: climbing, type: "健身" }, { name: "跳舞", images: dancing, type: "健身" }, { name: "劍道", images: sword, type: "健身" }, { name: "武術", images: kung_fu, type: "健身" }, { name: "溜冰", images: ice_skate, type: "健身" },]
 export default fitness_all

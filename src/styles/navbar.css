@@ -1,313 +1,748 @@
-.navbar_outside {
-    position: absolute;
-    z-index: 5;
+html,
+body {
+    margin: 0;
+    padding: 0;
+
 }
 
 
-.post_background {
-    position: fixed;
-    z-index: 6;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    opacity: 0.5;
-    cursor: pointer;
-}
+@media (max-width:1920px) {
+    .post_select {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-.comment {
-    display: block;
-}
+    .post_close {
+        display: none
+    }
 
-.comment_member {
-    margin-bottom: 10px;
-    display: flex;
-}
+    .post_close.active {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 46vw;
+    }
 
-.comment_member_title {
-    margin-left: 10px;
-    display: block;
-}
+    .post_close_img {
+        display: none;
+    }
 
-.post_name {
-    display: none;
-}
+    .post_close_img.active {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
 
+    .navbar_outside {
+        position: absolute;
+        z-index: 5;
+    }
 
-.post_member {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
+    .notification_home {
+        display: none
+    }
 
-.post_member_title {
-    margin-left: 5px;
-    display: block;
-}
+    .post_background {
+        position: fixed;
+        z-index: 6;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 0.5;
+        cursor: pointer;
+    }
 
-.post_avatar {
-    display: none
-}
+    .comment {
+        display: block;
+    }
 
-.post_avatar.active {
-    display: flex;
-    overflow: hidden;
-    border: 0.5px solid #232323;
-    border-radius: 50%;
-    width: 33px;
-    height: 33px;
-    color: black;
-    cursor: pointer;
-}
+    .comment_inside {
+        display: flex;
+        justify-content: space-between;
 
-.post_avatar_img {
-    display: none;
-}
+    }
 
-.post_avatar_img.active {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    object-fit: cover
-}
+    .comment_member {
+        margin-bottom: 10px;
+        display: flex;
+    }
 
-.post_name.active {
-    display: flex;
-    font-family: "Hind Madurai";
-    font-size: 20px;
-    font-weight: 700;
-    color: black;
-    margin: 0px 0px 0px 5px;
-    letter-spacing: 0.5px;
-}
+    .comment_member_title {
+        margin-left: 10px;
+        display: block;
+    }
 
-.post_outside {
-    position: fixed;
-    top: 15%;
-    left: 25%;
-    z-index: 7;
-    width: 50vw;
-    height: 70vh;
-    background-color: white;
-    opacity: 1;
-}
-
-.post {
-    display: flex;
-    justify-content: center;
-}
-
-.post_text {
-    display: none;
-}
-
-.post_text.active {
-    display: flex;
-    font-size: 30px;
-    color: black;
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-family: "Hind Madurai";
-    margin: 20px 0px 15px 0px;
-}
+    .post_name {
+        display: none;
+    }
 
 
-.post_textarea {
-    display: none;
-    height: 50px;
-}
+    .post_member {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
 
-.post_textarea.active {
-    display: flex;
-    width: 550px;
-    height: 100px;
-    resize: vertical;
-    padding: 10px;
-    font-size: 15px;
-    letter-spacing: 0.8px;
-    font-family: "Hind Madurai";
-    line-height: 20px;
-}
+    .post_member_title {
+        margin-left: 5px;
+        display: block;
+    }
 
-.post_image {
-    display: none;
-}
+    .post_avatar {
+        display: none
+    }
 
-.post_image.active {
-    display: flex;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-}
+    .post_avatar.active {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border: 0.5px solid #232323;
+        border-radius: 50%;
+        width: 33px;
+        height: 33px;
+        color: black;
+        cursor: pointer;
+    }
 
-.post_button {
-    display: none;
-}
+    .post_avatar_img {
+        display: none;
+    }
 
-.post_button.active {
-    display: flex;
-    margin-top: 10px;
-}
+    .post_avatar_img.active {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
 
-.post_textarea::placeholder {
-    padding: 0px;
-    color: #7a7a7a;
-    font-size: 15px;
-    letter-spacing: 0.8px;
-    font-family: "Hind Madurai";
-    line-height: 20px;
-}
+    .post_name.active {
+        display: flex;
+        font-family: "Hind Madurai";
+        font-size: 20px;
+        font-weight: 700;
+        color: black;
+        margin: 0px 0px 0px 5px;
+        letter-spacing: 0.5px;
+    }
 
-input[type="file"] {
-    display: none;
-}
+    .post_outside {
+        position: fixed;
+        left: 25vw;
+        z-index: 7;
+        width: 50vw;
+        height: 100vh;
+        background-color: white;
+        opacity: 1;
+    }
 
-.navbar {
-    width: 120vw;
-    display: flex;
-    align-items: center;
-    background-color: #06b873;
-    height: 49px;
-    position: fixed;
-}
+    .post {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+    }
 
-.logo {
-    padding: 0px;
-    border-width: 0px;
-    background-color: #06b873;
-}
+    .post_text {
+        display: none;
+    }
 
-.logo>img {
-    margin-left: 50px;
-    width: 105px;
-    filter: drop-shadow(1.5px 1.5px 1.5px#5b5e5d);
-    cursor: pointer;
-}
-
-.form_space {
-    width: 80vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.form {
-    opacity: 0;
-    margin-left: 150px;
-}
-
-.form_search {
-    display: flex;
-}
-
-.form_search_input {
-    display: flex;
-    align-items: center;
-    height: 31px;
-    width: 200px;
-    border-width: 0px;
-    border-radius: 16px 0px 0px 16px;
-    padding: 0px 0px 0px 16px;
-    background-color: #038a51;
-    caret-color: #e1f5ed;
-    color: #d7f5e9;
-    font-size: 15.5px;
-    /* box-shadow: 1px 1px 3px #5e5e5e; */
-}
-
-.form_search_input:focus {
-    /* outline: 0.5px solid white; */
-    outline: none;
-}
-
-.form_search_input::placeholder {
-    padding: 10px 0px 0px 0px;
-    font-size: 15.5px;
-    color: #d7f5e9;
-    position: relative;
-    top: 1px;
-}
+    .post_text.active {
+        display: flex;
+        font-size: 30px;
+        color: black;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-family: "Hind Madurai";
+        margin: 20px 0px 15px 0px;
+    }
 
 
-.form_search_button {
-    width: 36px;
-    height: 31px;
-    padding: 0px;
-    border-width: 0px;
-    background-color: #038a51;
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    margin-left: 2.5px;
-    border-radius: 0px 16px 16px 0px;
-    cursor: pointer;
-    filter: drop-shadow(0.5px 0.5px #787d7b)
+    .post_textarea {
+        display: none;
+        height: 50px;
+    }
+
+    .post_textarea.active {
+        display: flex;
+        width: 550px;
+        height: 100px;
+        resize: vertical;
+        padding: 10px;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+    }
+
+    .post_image {
+        display: none;
+    }
+
+    .post_image.active {
+        display: flex;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+    }
+
+    .post_button {
+        display: none;
+    }
+
+    .post_button.active {
+        display: flex;
+        margin-top: 10px;
+        height: 35px;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .post_textarea::placeholder {
+        padding: 0px;
+        color: #7a7a7a;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    .navbar {
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        background-color: #06b873;
+        height: 49px;
+        position: fixed;
+    }
+
+    .logo {
+        padding: 0px;
+        border-width: 0px;
+        background-color: #06b873;
+    }
+
+    .logo>img {
+        margin-left: 50px;
+        width: 105px;
+        filter: drop-shadow(1.5px 1.5px 1.5px#5b5e5d);
+        cursor: pointer;
+    }
+
+    .form_space {
+        width: 80vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form {
+        opacity: 0;
+        margin-left: 150px;
+    }
+
+    .form_search {
+        display: flex;
+    }
+
+    .form_search_input {
+        display: flex;
+        align-items: center;
+        height: 31px;
+        width: 200px;
+        border-width: 0px;
+        border-radius: 16px 0px 0px 16px;
+        padding: 0px 0px 0px 16px;
+        background-color: #038a51;
+        caret-color: #e1f5ed;
+        color: #d7f5e9;
+        font-size: 15.5px;
         /* box-shadow: 1px 1px 3px #5e5e5e; */
+    }
+
+    .form_search_input:focus {
+        /* outline: 0.5px solid white; */
+        outline: none;
+    }
+
+    .form_search_input::placeholder {
+        padding: 10px 0px 0px 0px;
+        font-size: 15.5px;
+        color: #d7f5e9;
+        position: relative;
+        top: 1px;
+    }
+
+
+    .form_search_button {
+        width: 36px;
+        height: 31px;
+        padding: 0px;
+        border-width: 0px;
+        background-color: #038a51;
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        margin-left: 2.5px;
+        border-radius: 0px 16px 16px 0px;
+        cursor: pointer;
+        filter: drop-shadow(0.5px 0.5px #787d7b)
+            /* box-shadow: 1px 1px 3px #5e5e5e; */
+    }
+
+    .form_search_button>img {
+        width: 16.5px;
+        margin-left: 8.5px;
+
+        /* filter: brightness(0); */
+        /* filter: brightness(100); */
+    }
+
+    .top_button {
+        display: flex;
+    }
+
+    .notification {
+        cursor: pointer;
+        background-color: #06b873;
+        padding: 0px;
+        border-width: 0px;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 8px 0px 8px;
+    }
+
+
+    .notification_add {
+        margin: 5px 0px 3px 25px;
+        height: 21px;
+        filter: drop-shadow(0.8px 0.8px 1px #949494)
+    }
+
+    .notification_home {
+        margin: 3px 0px 3px 0px;
+        height: 21px;
+        filter: drop-shadow(0.8px 0.8px 1px #949494)
+    }
+
+    .notification_bell {
+        margin: 3px 0px 3px 0px;
+        height: 23px;
+        filter: drop-shadow(0.8px 0.8px 1px #949494);
+        display: none;
+    }
+
+    .notification_mail {
+        display: none;
+        margin: 3px 0px 3px 0px;
+        height: 20px;
+        filter: drop-shadow(0.8px 0.8px 1px #949494)
+    }
+
+    .notification_settings {
+        margin: 5px 0px 3px 0px;
+        height: 21px;
+        filter: drop-shadow(0.8px 0.8px 1px #949494)
+    }
+
+    .log_out {
+        font-family: msjhbd;
+        height: 28px;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 1.5px;
+        /* background-color: #04834ee8; */
+        background-color: #07d966;
+        border: 0;
+        padding: 0px 5px 0px 5px;
+        /* filter: drop-shadow(0.8px 0.8px 0.8px #949494); */
+        margin-left: 50px;
+        cursor: pointer;
+    }
 }
 
-.form_search_button>img {
-    width: 16.5px;
-    margin-left: 8.5px;
+@media (max-width:1535px) {
 
-    /* filter: brightness(0); */
-    /* filter: brightness(100); */
+
+    .post_outside {
+        position: fixed;
+        left: 25vw;
+        z-index: 7;
+        width: 50vw;
+        height: 100vh;
+        background-color: white;
+        opacity: 1;
+    }
 }
 
-.top_button {
-    display: flex;
+@media (max-width:1420px) {
+
+    .post_textarea.active {
+        display: flex;
+        width: 450px;
+        height: 100px;
+        resize: vertical;
+        padding: 10px;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+    }
+
 }
 
-.notification {
-    cursor: pointer;
-    background-color: #06b873;
-    padding: 0px;
-    border-width: 0px;
-    align-items: center;
-    justify-content: center;
-    margin: 0px 8px 0px 8px;
+
+@media (max-width:1270px) {
+
+    .post_close.active {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 55vw;
+    }
+
+    .post_outside {
+        position: fixed;
+        left: 20vw;
+        z-index: 7;
+        width: 60vw;
+        height: 100vh;
+        background-color: white;
+        opacity: 1;
+    }
+
+    .post_textarea.active {
+        display: flex;
+        width: 450px;
+        height: 100px;
+        resize: vertical;
+        padding: 10px;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+    }
+
 }
 
 
-.notification_add {
-    margin: 3px 0px 3px 0px;
-    height: 21px;
-    filter: drop-shadow(0.8px 0.8px 1px #949494)
+
+@media (max-width:1100px) {
+    .post_close.active {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 62vw;
+    }
+
+    .post_outside {
+        position: fixed;
+        left: 17%;
+        z-index: 7;
+        width: 68vw;
+        height: 100vh;
+        background-color: white;
+        opacity: 1;
+    }
+
+    .post_textarea.active {
+        display: flex;
+        width: 450px;
+        height: 100px;
+        resize: vertical;
+        padding: 10px;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+    }
+
+
+    .form {
+        display: none;
+        opacity: 0;
+        margin-left: 150px;
+    }
+
+    .form_space {
+        width: 72vw;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
 }
 
-.notification_bell {
-    margin: 3px 0px 3px 0px;
-    height: 23px;
-    filter: drop-shadow(0.8px 0.8px 1px #949494);
-    display: none;
+
+
+@media (max-width:900px) {
+
+    .post_close.active {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 60vw;
+    }
+
+    .post_outside {
+        position: fixed;
+        left: 17%;
+        z-index: 7;
+        width: 68vw;
+        height: 100vh;
+        background-color: white;
+        opacity: 1;
+    }
+
+    .post_textarea.active {
+        display: flex;
+        width: 350px;
+        height: 100px;
+        resize: vertical;
+        padding: 10px;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+    }
+
+
+    .form {
+        display: none;
+        opacity: 0;
+        margin-left: 150px;
+    }
+
+    .form_space {
+        width: 72vw;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
 }
 
-.notification_mail {
-    display: none;
-    margin: 3px 0px 3px 0px;
-    height: 20px;
-    filter: drop-shadow(0.8px 0.8px 1px #949494)
+@media (max-width:700px) {
+    .post_close.active {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 90vw;
+    }
+
+    .post_outside {
+        position: fixed;
+        left: 0%;
+        z-index: 7;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        opacity: 1;
+    }
+
+    .form_space {
+        width: 80vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form {
+        opacity: 0;
+        margin-left: 150px;
+    }
+
+    .notification_home {
+        display: flex;
+        margin: 3px 0 3px 15vw;
+        height: 21px;
+        filter: drop-shadow(0.8px 0.8px 1px #949494)
+    }
+
+
+    .log_out {
+        font-family: msjhbd;
+        height: 28px;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 1.5px;
+        /* background-color: #04834ee8; */
+        background-color: #07d966;
+        border: 0;
+        padding: 0px 5px 0px 5px;
+        /* filter: drop-shadow(0.8px 0.8px 0.8px #949494); */
+        margin-left: 30px;
+        cursor: pointer;
+    }
+
+    .notification {
+        cursor: pointer;
+        background-color: #06b873;
+        padding: 0px;
+        border-width: 0px;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 1vw 0px 1vw;
+    }
+
 }
 
-.notification_settings {
-    margin: 3px 0px 3px 0px;
-    height: 21px;
-    filter: drop-shadow(0.8px 0.8px 1px #949494)
+
+@media (max-width:600px) {
+    .post_close.active {
+        display: flex;
+        overflow: hidden;
+        width: 45px;
+        height: 45px;
+        color: black;
+        cursor: pointer;
+        margin-left: 88vw;
+    }
+
+    .form_space {
+        width: 80vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form {
+        opacity: 0;
+        margin-left: 150px;
+    }
+
+    .notification_home {
+        display: flex;
+        margin: 3px 0 3px 15vw;
+        height: 21px;
+        filter: drop-shadow(0.8px 0.8px 1px #949494)
+    }
+
+
+    .log_out {
+        font-family: msjhbd;
+        height: 28px;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 1.5px;
+        /* background-color: #04834ee8; */
+        background-color: #07d966;
+        border: 0;
+        padding: 0px 5px 0px 5px;
+        /* filter: drop-shadow(0.8px 0.8px 0.8px #949494); */
+        margin-left: 30px;
+        cursor: pointer;
+    }
+
+    .notification {
+        cursor: pointer;
+        background-color: #06b873;
+        padding: 0px;
+        border-width: 0px;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 1vw 0px 1vw;
+    }
+
 }
 
-.log_out {
-    font-family: msjhbd;
-    height: 28px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 700;
-    color: white;
-    letter-spacing: 1.5px;
-    /* background-color: #04834ee8; */
-    background-color: #07d966;
-    border: 0;
-    padding: 0px 5px 0px 5px;
-    /* filter: drop-shadow(0.8px 0.8px 0.8px #949494); */
-    margin-left: 50px;
-    cursor: pointer;
+
+@media (max-width:460px) {
+
+
+    .form_space {
+        width: 80vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 8.5vw;
+    }
+
+    .notification_add {
+        margin: 5px 0px 3px 5px;
+        height: 21px;
+        filter: drop-shadow(0.8px 0.8px 1px #949494)
+    }
+
+    .form {
+        opacity: 0;
+        margin-left: 150px;
+    }
+
+    .notification_home {
+        display: flex;
+        margin: 3px 0px 3px 5vw;
+        height: 21px;
+        filter: drop-shadow(0.8px 0.8px 1px #949494)
+    }
+
+
+    .log_out {
+        font-family: msjhbd;
+        height: 28px;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 1.5px;
+        /* background-color: #04834ee8; */
+        background-color: #07d966;
+        border: 0;
+        padding: 0px 5px 0px 5px;
+        /* filter: drop-shadow(0.8px 0.8px 0.8px #949494); */
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .notification {
+        cursor: pointer;
+        background-color: #06b873;
+        padding: 0px;
+        border-width: 0px;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 0.5vw 0px 0.5vw;
+    }
+
+    .post_textarea.active {
+        display: flex;
+        width: 70vw;
+        height: 100px;
+        resize: vertical;
+        padding: 10px;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Hind Madurai";
+        line-height: 20px;
+    }
+
 }

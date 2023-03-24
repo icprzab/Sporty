@@ -25,6 +25,7 @@ import balls from "./data/data-ball"
 import { useContext } from "react"
 import avatar from "./assets/member.png"
 import { AuthContext } from "./context/Authcontext"
+import { PageContext } from "./context/Pagecontext"
 import { imageContext } from "./context/imageContext"
 import { NameContext } from "./context/NameContext"
 import { GroupContext } from "./context/GroupContext"
@@ -34,10 +35,12 @@ import { storage } from "./firebase-config"
 import { db } from "./firebase-config";
 import { collection, getDoc, addDoc, deleteDoc, doc, query, where, orderBy, serverTimestamp, onSnapshot, getDocFromCache } from "firebase/firestore";
 function APP() {
+    // const [typeIcon, setTypeIcon] = useState(null);
     const [url, setUrl] = useState(avatar)
     const [value, setValue] = useState(balls)
     const [userName, setUserName] = useState(null)
     const [group, setGroup] = useState(null);
+    const [page, setPage] = useState(false);
     const [currentUser, setCurrentUser] = useState(localStorage.getItem("user"))
     const RequireAuth = ({ children }) => {
         return currentUser ? children : <Navigate to="/" />;
@@ -73,35 +76,37 @@ function APP() {
                         <Route path="/" element={<Login />} />
                         <Route path="/Register" element={<Register />} />
                     </Routes>
-                    <GroupContext.Provider value={{ group, setGroup }}  >
-                        <NameContext.Provider value={{ userName, setUserName }}  >
-                            <imageContext.Provider value={{ url, setUrl }} >
-                                <Routes>
-                                    <Route path="/SideBar" element={<RequireAuth><Navbar /></RequireAuth>} />
-                                    <Route path="/Mypage" element={<RequireAuth><Navbar /></RequireAuth>} />
-                                    <Route path="/Member" element={<RequireAuth><Navbar /></RequireAuth>} />
-                                    <Route path="/Setting" element={<RequireAuth><Navbar /></RequireAuth>} />
-                                    <Route path="/Hiking" element={<RequireAuth><Navbar /></RequireAuth>} />
-                                </Routes>
-                                <dataContext.Provider value={{ value, setValue }}>
+                    <PageContext.Provider value={{ page, setPage }}  >
+                        <GroupContext.Provider value={{ group, setGroup }}  >
+                            <NameContext.Provider value={{ userName, setUserName }}  >
+                                <imageContext.Provider value={{ url, setUrl }} >
                                     <Routes>
-                                        <Route path="/SideBar" element={<RequireAuth><SideBar /></RequireAuth>} />
-                                        <Route path="/Mypage" element={<RequireAuth><SideBar /></RequireAuth>} />
-                                        <Route path="/Member" element={<RequireAuth><SideBar /></RequireAuth>} />
-                                        <Route path="/Setting" element={<RequireAuth><SideBar /></RequireAuth>} />
-                                        <Route path="/Hiking" element={<RequireAuth><SideBar /></RequireAuth>} />
+                                        <Route path="/SideBar" element={<RequireAuth><Navbar /></RequireAuth>} />
+                                        <Route path="/Mypage" element={<RequireAuth><Navbar /></RequireAuth>} />
+                                        <Route path="/Member" element={<RequireAuth><Navbar /></RequireAuth>} />
+                                        <Route path="/Setting" element={<RequireAuth><Navbar /></RequireAuth>} />
+                                        <Route path="/Hiking" element={<RequireAuth><Navbar /></RequireAuth>} />
                                     </Routes>
-                                </dataContext.Provider>
-                                <Routes>
-                                    <Route path="/SideBar" element={<RequireAuth><MyPage /></RequireAuth>} />
-                                    <Route path="/Mypage" element={<RequireAuth><MyPage /></RequireAuth>} />
-                                    <Route path="/Member" element={<RequireAuth><Member /></RequireAuth>} />
-                                    <Route path="/Setting" element={<RequireAuth><Setting /></RequireAuth>} />
-                                    <Route path="/Hiking" element={<RequireAuth><Home /></RequireAuth>} />
-                                </Routes>
-                            </imageContext.Provider>
-                        </NameContext.Provider>
-                    </GroupContext.Provider>
+                                    <dataContext.Provider value={{ value, setValue }}>
+                                        <Routes>
+                                            <Route path="/SideBar" element={<RequireAuth><SideBar /></RequireAuth>} />
+                                            <Route path="/Mypage" element={<RequireAuth><SideBar /></RequireAuth>} />
+                                            <Route path="/Member" element={<RequireAuth><SideBar /></RequireAuth>} />
+                                            <Route path="/Setting" element={<RequireAuth><SideBar /></RequireAuth>} />
+                                            <Route path="/Hiking" element={<RequireAuth><SideBar /></RequireAuth>} />
+                                        </Routes>
+                                    </dataContext.Provider>
+                                    <Routes>
+                                        <Route path="/SideBar" element={<RequireAuth><MyPage /></RequireAuth>} />
+                                        <Route path="/Mypage" element={<RequireAuth><MyPage /></RequireAuth>} />
+                                        <Route path="/Member" element={<RequireAuth><Member /></RequireAuth>} />
+                                        <Route path="/Setting" element={<RequireAuth><Setting /></RequireAuth>} />
+                                        <Route path="/Hiking" element={<RequireAuth><Home /></RequireAuth>} />
+                                    </Routes>
+                                </imageContext.Provider>
+                            </NameContext.Provider>
+                        </GroupContext.Provider>
+                    </PageContext.Provider   >
                 </AuthContext.Provider>
             </div>
         </div>
