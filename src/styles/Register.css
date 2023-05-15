@@ -50,11 +50,10 @@
 
 .middle_content_inside {
     display: block;
-    width: 390px;
-    height: 460px;
+    width: 385px;
+    height: 490px;
     background-color: white;
     border-radius: 10px;
-    padding: 0px 0px 30px 0px;
 }
 
 .middle_content_logo {
@@ -66,7 +65,7 @@
 }
 
 .middle_content_logo>img {
-    margin: 13px 0px 13px 0px;
+    margin: 14px 0px 10px 0px;
     height: 36px;
     filter: drop-shadow(1.5px 1.5px 1.5px#494d4b);
 }
@@ -82,7 +81,7 @@
     font-size: 26px;
     color: black;
     letter-spacing: 0.9px;
-    margin: 16px 0px 8px 0px;
+    margin: 12px 0px 4px 0px;
 }
 
 .middle_content_form_outside {
@@ -98,11 +97,11 @@
 
 .middle_content_form_input {
     width: 275px;
-    height: 44px;
+    height: 40px;
     border-radius: 5px;
     border: 1px solid #9fa1a0;
     padding: 5px 0px 0px 10px;
-    margin: 5px 0px 1px 0px;
+    margin: 2px 0px 1px 0px;
     font-family: "Hind Madurai";
     font-size: 18px;
     font-weight: 700;
@@ -133,7 +132,6 @@
     padding: 0px;
     background-color: #474f46;
     color: white;
-    margin: 5px 0px 0px 0px;
     cursor: pointer;
 }
 
@@ -145,6 +143,51 @@
     letter-spacing: 1px;
     font-size: 18px;
     font-weight: 700;
-    margin: 17px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
     cursor: pointer;
+}
+
+.middle_content_form_change_text {
+    margin: 0px 0px 0px 0px;
+}
+
+.middle_content_form_radio {
+    display: flex;
+    justify-content: space-around;
+    font-family: "Hind Madurai";
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.middle_content_form_radio_text {
+    color: #7d807e;
+}
+
+.middle_content_form_radio_gender {
+    color: #474f46;
+}
+
+.middle_content_form_success_center {
+    display: flex;
+    justify-content: center;
+}
+
+.middle_content_form_success {
+    font-family: "Hind Madurai";
+    font-size: 15px;
+    opacity: 0;
+}
+
+.middle_content_form_success.active {
+    font-family: "Hind Madurai";
+    font-size: 15px;
+    color: #68e364;
+    font-weight: 700;
+    opacity: 1;
+    line-height: 35px;
+    height: 30px;
 }

@@ -4,12 +4,8 @@ import background from "../assets/background.jpg"
 import logo from "../assets/logo.png"
 import { useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useState, useEffect } from "react";
-import { useContext } from "react";
-import { AuthContext } from "../context/Authcontext"
-import { onAuthStateChanged } from "firebase/auth";
+import { useState } from "react";
 function Login() {
-    // const { currentUser, setCurrentUser } = useContext(AuthContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [noticeEmail, setNoticeEmail] = useState(["帳號輸入錯誤"]);
@@ -25,7 +21,6 @@ function Login() {
         setDisplayPassword(false)
         setPassword(e.target.value);
     }
-
 
     async function handleSubmit(e) {
         setDisplayPassword(false)
@@ -52,9 +47,19 @@ function Login() {
                     }
 
                 })
-                .catch((error) => {
-                    // setDisplayNotice(true)
-                    console.log(error)
+                .catch(function (error) {
+                    if (error.code == "auth/invalid-email") {
+                        setNoticeEmail("帳號輸入錯誤")
+                        setDisplayEmail(true)
+                    }
+                    if (error.code == "auth/user-not-found") {
+                        setNoticePassword("帳號輸入錯誤")
+                        setDisplayEmail(true)
+                    }
+                    if (error.code == "auth/wrong-password") {
+                        setNoticePassword("密碼輸入錯誤")
+                        setDisplayPassword(true)
+                    }
                 });
             setEmail("");
             setPassword("");
@@ -81,14 +86,17 @@ function Login() {
                                 <div className={displayEmail ? "middle_content_form_input_text active" : "middle_content_form_input_text"}>{noticeEmail}</div>
                             </div>
 
-                            <input className="middle_content_form_input" type="text" placeholder="請輸入密碼" value={password} onChange={inputPassword}></input>
+                            <input className="middle_content_form_input" type="password" placeholder="請輸入密碼" value={password} onChange={inputPassword}></input>
                             <div>
                                 <div className={displayPassword ? "middle_content_form_input_text active" : "middle_content_form_input_text"}>{noticePassword}</div>
                             </div>
 
                             <button className="middle_content_form_button" type="submit" >登入帳號</button>
+                            <div className="middle_content_form_success_center">
+                                <div className="middle_content_form_success">登入成功</div>
+                            </div>
                             <div className="middle_content_form_change">
-                                <div className="middle_content_form_change_text" onClick={() => { navigate("/Register") }}>還沒有帳號? 請點此註冊</div>
+                                <div onClick={() => { navigate("/Register") }}>還沒有帳號? 請點此註冊</div>
                             </div>
                         </form>
                     </div>

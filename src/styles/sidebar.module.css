@@ -16,10 +16,8 @@
         justify-content: center;
         position: fixed;
         width: 20vw;
-        /* background-color: #fafafa; */
         background-color: white;
         filter: drop-shadow(1px 1px 1px #5e5e5e);
-        /* border: 1px solid #474747; */
     }
 
     .category {
@@ -31,7 +29,7 @@
     .category_member {
         display: flex;
         align-items: center;
-        margin: 38px 0px 0px 38px;
+        margin: 38px 0px 0px 3.2vw;
         cursor: pointer;
     }
 
@@ -63,7 +61,7 @@
 
     .category_content {
         display: flex;
-        margin-left: 40px;
+        margin-left: 3.5vw;
         margin-top: 15px;
         font-family: Hind Madurai;
         font-size: 20px;
@@ -87,13 +85,13 @@
     }
 
     .category_content_group_outside {
-        width: 14vw;
-        margin-left: 20px;
+        width: 12vw;
+        margin-left: 2.5vw;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px 18px 10px 18px;
-        border-radius: 25px;
+        border-radius: 30px;
     }
 
     .category_content_group_outside:hover {
@@ -103,10 +101,9 @@
     }
 
     .category_content_group {
-        width: 11.6vw;
+        width: 12vw;
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
 
     .category_content_group_image {
@@ -116,7 +113,7 @@
     }
 
     .category_content_group_image>img {
-        height: 25px;
+        width: 25px;
         justify-content: center;
     }
 
@@ -124,7 +121,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 9.1vw;
+        width: 14vw;
+        margin-left: 14px;
     }
 
 
@@ -141,6 +139,7 @@
 
 
     .category_content_group_type {
+        letter-spacing: 1px;
         font-weight: 700;
         font-size: 15px;
         color: #a3a2a3;
@@ -160,9 +159,10 @@
 
     .category_content_all {
         display: flex;
+        width: 13.8vw;
         align-items: center;
-        justify-content: center;
-        margin: 10px 0px 8px 0px;
+        justify-content: space-around;
+        margin: 10px 0px 8px 2.7vw;
         font-family: msjhbd;
         font-size: 18px;
         color: #2b2b2b;
@@ -172,11 +172,22 @@
 
     .category_content_all_ball {
         cursor: pointer;
-        margin: 0px 14px 0px 0px;
         border: 0px;
         background-color: white;
-        /* color: #f26e02; */
         color: #bf500b;
+        font-size: 17px;
+        font-weight: 700;
+        padding: 2px 4px 2px 4px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_ball2 {
+        cursor: pointer;
+        border: 0px;
+        background-color: #bf500b;
+        color: white;
         font-size: 17px;
         font-weight: 700;
         padding: 2px 4px 2px 4px;
@@ -187,7 +198,6 @@
 
     .category_content_all_ball:hover {
         cursor: pointer;
-        /* background-color: #fac6a5; */
         border: 1.6px solid #4a4a4a;
     }
 
@@ -195,9 +205,21 @@
         cursor: pointer;
         border: 0px;
         background-color: white;
-        margin: 0px 14px 0px 0px;
         padding: 2px 4px 2px 4px;
         color: #1306c4;
+        font-size: 17px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_water2 {
+        cursor: pointer;
+        border: 0px;
+        background-color: #1306c4;
+        padding: 2px 4px 2px 4px;
+        color: white;
         font-size: 17px;
         font-weight: 700;
         border-radius: 5px;
@@ -216,7 +238,6 @@
         cursor: pointer;
         border: 0px;
         background-color: white;
-        margin: 0px 14px 0px 0px;
         padding: 2px 4px 2px 4px;
         color: #048741;
         font-size: 17px;
@@ -226,9 +247,21 @@
         justify-content: center;
     }
 
+    .category_content_all_outdoor2 {
+        cursor: pointer;
+        border: 0px;
+        background-color: #048741;
+        padding: 2px 4px 2px 4px;
+        color: white;
+        font-size: 17px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
     .category_content_all_outdoor:hover {
         cursor: pointer;
-        /* background-color: #c5fad1; */
         border: 1.6px solid #4a4a4a;
     }
 
@@ -237,7 +270,19 @@
         border: 0px;
         background-color: white;
         color: #b809a0;
-        margin: 0px 14px 0px 0px;
+        padding: 2px 4px 2px 4px;
+        font-size: 17px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_fitness2 {
+        cursor: pointer;
+        border: 0px;
+        background-color: #b809a0;
+        color: white;
         padding: 2px 4px 2px 4px;
         font-size: 17px;
         font-weight: 700;
@@ -266,7 +311,6 @@
         display: flex;
         justify-content: center;
         width: 23vw;
-        /* background-color: #fafafa; */
         background-color: white;
     }
 
@@ -278,7 +322,7 @@
     .category_member {
         display: flex;
         align-items: center;
-        margin: 38px 0px 0px 38px;
+        margin: 38px 0px 0px 3.6vw;
         cursor: pointer;
     }
 
@@ -307,12 +351,11 @@
         margin-left: 11px;
     }
 
-
     .category_content {
         display: flex;
-        margin-left: 40px;
-        margin-top: 12px;
-        font-family: "Hind Madurai";
+        margin-left: 4.1vw;
+        margin-top: 15px;
+        font-family: Hind Madurai;
         font-size: 20px;
         font-weight: 700;
         color: #a3a2a3;
@@ -333,14 +376,27 @@
         margin: 10px 0px 10px 0px;
     }
 
+    .category_content_all {
+        display: flex;
+        width: 17.5vw;
+        align-items: center;
+        justify-content: space-around;
+        margin: 10px 0px 8px 3vw;
+        font-family: msjhbd;
+        font-size: 18px;
+        color: #2b2b2b;
+        letter-spacing: 2px;
+        font-weight: 500;
+    }
+
     .category_content_group_outside {
-        width: 16.5vw;
-        margin-left: 20px;
+        width: 15vw;
+        margin-left: 3vw;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px 18px 10px 18px;
-        border-radius: 25px;
+        border-radius: 30px;
     }
 
     .category_content_group_outside:hover {
@@ -352,7 +408,6 @@
         width: 15vw;
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
 
     .category_content_group_image {
@@ -362,7 +417,6 @@
     }
 
     .category_content_group_image>img {
-        height: 25px;
         justify-content: center;
     }
 
@@ -399,94 +453,9 @@
 
     .category_content_pullBall>img {
         width: 19px;
-        /* filter: drop-shadow(0.5px 0.5px 0.5px #707070) */
     }
 
-    .category_content_all {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 10px 0px 8px 0px;
-        font-family: "Hind Madurai";
-        font-size: 18px;
-        color: #2b2b2b;
-        letter-spacing: 2px;
-        font-weight: 500;
-    }
 
-    .category_content_all_ball {
-        margin: 0px 14px 0px 0px;
-        border: 0px;
-        background-color: white;
-        /* color: #f26e02; */
-        color: #bf500b;
-        font-size: 17px;
-        font-weight: 700;
-        padding: 2px 4px 2px 4px;
-        border-radius: 4px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .category_content_all_ball:hover {
-        /* background-color: #fac6a5; */
-        border: 1.6px solid #4a4a4a;
-    }
-
-    .category_content_all_water {
-        border: 0px;
-        background-color: white;
-        margin: 0px 14px 0px 0px;
-        padding: 2px 4px 2px 4px;
-        color: #1306c4;
-        font-size: 17px;
-        font-weight: 700;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .category_content_all_water:hover {
-        /* background-color: #d9deff; */
-        border: 1.6px solid #4a4a4a;
-
-    }
-
-    .category_content_all_outdoor {
-        border: 0px;
-        background-color: white;
-        margin: 0px 14px 0px 0px;
-        padding: 2px 4px 2px 4px;
-        color: #048741;
-        font-size: 17px;
-        font-weight: 700;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .category_content_all_outdoor:hover {
-        /* background-color: #c5fad1; */
-        border: 1.6px solid #4a4a4a;
-    }
-
-    .category_content_all_fitness {
-        border: 0px;
-        background-color: white;
-        color: #b809a0;
-        margin: 0px 14px 0px 0px;
-        padding: 2px 4px 2px 4px;
-        font-size: 17px;
-        font-weight: 700;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .category_content_all_fitness:hover {
-        /* background-color: #fcb3f4; */
-        border: 1.6px solid #4a4a4a;
-    }
 }
 
 
@@ -501,23 +470,22 @@
         display: flex;
         justify-content: center;
         width: 32vw;
-        /* background-color: #fafafa; */
         background-color: white;
     }
 
     .category_content_group_outside {
-        width: 22vw;
-        margin-left: 4vw;
+        width: 17vw;
+        margin-left: 5.5vw;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px 18px 10px 18px;
-        border-radius: 25px;
+        border-radius: 30px;
     }
 
     .category_content {
         display: flex;
-        margin-left: 5.5vw;
+        margin-left: 6.3vw;
         margin-top: 15px;
         font-family: Hind Madurai;
         font-size: 20px;
@@ -541,10 +509,24 @@
         margin: 10px 0px 10px 0px;
     }
 
+
+    .category_content_all {
+        display: flex;
+        width: 21.5vw;
+        align-items: center;
+        justify-content: space-around;
+        margin: 10px 0px 8px 5vw;
+        font-family: msjhbd;
+        font-size: 18px;
+        color: #2b2b2b;
+        letter-spacing: 2px;
+        font-weight: 500;
+    }
+
     .category_member {
         display: flex;
         align-items: center;
-        margin: 38px 0px 0px 5.5vw;
+        margin: 38px 0px 0px 6.3vw;
         cursor: pointer;
     }
 
@@ -552,10 +534,9 @@
 
 
     .category_content_group {
-        width: 18vw;
+        width: 17vw;
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
 
     .category_content_group_text {
@@ -575,22 +556,45 @@
         z-index: 4;
     }
 
+
     .category_content_group_outside {
-        width: 22.5vw;
-        margin-left: 3vw;
+        width: 18vw;
+        margin-left: 5vw;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px 18px 10px 18px;
-        border-radius: 25px;
+        border-radius: 30px;
+    }
+
+    .category_content {
+        display: flex;
+        margin-left: 4vw;
+        margin-top: 15px;
+        font-family: Hind Madurai;
+        font-size: 20px;
+        font-weight: 700;
+        color: #a3a2a3;
+        letter-spacing: 3px;
+    }
+
+    .category_content_all {
+        display: flex;
+        width: 23vw;
+        align-items: center;
+        justify-content: space-around;
+        margin: 10px 0px 8px 4vw;
+        font-family: msjhbd;
+        font-size: 18px;
+        color: #2b2b2b;
+        letter-spacing: 2px;
+        font-weight: 500;
     }
 
     .category_content_all_ball {
         cursor: pointer;
-        margin: 0px 10px 0px 0px;
         border: 0px;
         background-color: white;
-        /* color: #f26e02; */
         color: #bf500b;
         font-size: 17px;
         font-weight: 700;
@@ -602,7 +606,6 @@
 
     .category_content_all_ball:hover {
         cursor: pointer;
-        /* background-color: #fac6a5; */
         border: 1.6px solid #4a4a4a;
     }
 
@@ -610,7 +613,6 @@
         cursor: pointer;
         border: 0px;
         background-color: white;
-        margin: 0px 10px 0px 0px;
         padding: 2px 4px 2px 4px;
         color: #1306c4;
         font-size: 17px;
@@ -622,7 +624,6 @@
 
     .category_content_all_water:hover {
         cursor: pointer;
-        /* background-color: #d9deff; */
         border: 1.6px solid #4a4a4a;
 
     }
@@ -631,7 +632,6 @@
         cursor: pointer;
         border: 0px;
         background-color: white;
-        margin: 0px 10px 0px 0px;
         padding: 2px 4px 2px 4px;
         color: #048741;
         font-size: 17px;
@@ -643,7 +643,6 @@
 
     .category_content_all_outdoor:hover {
         cursor: pointer;
-        /* background-color: #c5fad1; */
         border: 1.6px solid #4a4a4a;
     }
 
@@ -652,7 +651,6 @@
         border: 0px;
         background-color: white;
         color: #b809a0;
-        margin: 0px 10px 0px 0px;
         padding: 2px 4px 2px 4px;
         font-size: 17px;
         font-weight: 700;
@@ -663,7 +661,6 @@
 
     .category_content_all_fitness:hover {
         cursor: pointer;
-        /* background-color: #fcb3f4; */
         border: 1.6px solid #4a4a4a;
     }
 
@@ -675,10 +672,9 @@
     }
 
     .category_content_group {
-        width: 20vw;
+        width: 18vw;
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
 
 
@@ -696,7 +692,7 @@
         color: #2b2b2b;
         letter-spacing: 1px;
         font-weight: 700;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .category_content_group_type {
@@ -716,13 +712,27 @@
     }
 
     .category_content_group_outside {
-        width: 24vw;
-        margin-left: 3vw;
+        width: 20vw;
+        margin-left: 4vw;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 18px 10px 8px;
-        border-radius: 25px;
+        padding: 10px 18px 10px 18px;
+        border-radius: 30px;
+    }
+
+
+    .category_content_all {
+        display: flex;
+        width: 25vw;
+        align-items: center;
+        justify-content: space-around;
+        margin: 10px 0px 8px 3.5vw;
+        font-family: msjhbd;
+        font-size: 18px;
+        color: #2b2b2b;
+        letter-spacing: 2px;
+        font-weight: 500;
     }
 
     .category_content_all_ball {
@@ -730,7 +740,6 @@
         margin: 0px 8px 0px 0px;
         border: 0px;
         background-color: white;
-        /* color: #f26e02; */
         color: #bf500b;
         font-size: 17px;
         font-weight: 700;
@@ -742,7 +751,6 @@
 
     .category_content_all_ball:hover {
         cursor: pointer;
-        /* background-color: #fac6a5; */
         border: 1.6px solid #4a4a4a;
     }
 
@@ -750,7 +758,6 @@
         cursor: pointer;
         border: 0px;
         background-color: white;
-        margin: 0px 8px 0px 0px;
         padding: 2px 4px 2px 4px;
         color: #1306c4;
         font-size: 17px;
@@ -762,7 +769,6 @@
 
     .category_content_all_water:hover {
         cursor: pointer;
-        /* background-color: #d9deff; */
         border: 1.6px solid #4a4a4a;
 
     }
@@ -771,7 +777,6 @@
         cursor: pointer;
         border: 0px;
         background-color: white;
-        margin: 0px 8px 0px 0px;
         padding: 2px 4px 2px 4px;
         color: #048741;
         font-size: 17px;
@@ -783,7 +788,6 @@
 
     .category_content_all_outdoor:hover {
         cursor: pointer;
-        /* background-color: #c5fad1; */
         border: 1.6px solid #4a4a4a;
     }
 
@@ -792,7 +796,6 @@
         border: 0px;
         background-color: white;
         color: #b809a0;
-        margin: 0px 8px 0px 0px;
         padding: 2px 4px 2px 4px;
         font-size: 17px;
         font-weight: 700;
@@ -803,15 +806,7 @@
 
     .category_content_all_fitness:hover {
         cursor: pointer;
-        /* background-color: #fcb3f4; */
         border: 1.6px solid #4a4a4a;
-    }
-
-    .category_member {
-        display: flex;
-        align-items: center;
-        margin: 38px 0px 0px 3.8vw;
-        cursor: pointer;
     }
 
     .category_content_group_text {
@@ -822,10 +817,9 @@
     }
 
     .category_content_group {
-        width: 22vw;
+        width: 20vw;
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
 
 
@@ -836,7 +830,7 @@
         color: #2b2b2b;
         letter-spacing: 0px;
         font-weight: 700;
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
@@ -850,22 +844,35 @@
     }
 
     .category_content_group_outside {
-        width: 25vw;
-        margin-left: 3vw;
+        width: 21.5vw;
+        margin-left: 3.2vw;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 18px 10px 8px;
-        border-radius: 25px;
+        padding: 10px 18px 10px 18px;
+        border-radius: 30px;
     }
+
 
     .category_content_all_ball {
         cursor: pointer;
-        margin: 0px 5px 0px 0px;
         border: 0px;
         background-color: white;
-        /* color: #f26e02; */
         color: #bf500b;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 2px 4px 2px 4px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .category_content_all_ball2 {
+        cursor: pointer;
+        border: 0px;
+        background-color: #bf500b;
+        color: white;
         font-size: 15px;
         font-weight: 700;
         padding: 2px 4px 2px 4px;
@@ -876,7 +883,6 @@
 
     .category_content_all_ball:hover {
         cursor: pointer;
-        /* background-color: #fac6a5; */
         border: 1.6px solid #4a4a4a;
     }
 
@@ -884,7 +890,6 @@
         cursor: pointer;
         border: 0px;
         background-color: white;
-        margin: 0px 5px 0px 0px;
         padding: 2px 4px 2px 4px;
         color: #1306c4;
         font-size: 15px;
@@ -894,9 +899,21 @@
         justify-content: center;
     }
 
+    .category_content_all_water2 {
+        cursor: pointer;
+        border: 0px;
+        background-color: #1306c4;
+        padding: 2px 4px 2px 4px;
+        color: white;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
     .category_content_all_water:hover {
         cursor: pointer;
-        /* background-color: #d9deff; */
         border: 1.6px solid #4a4a4a;
 
     }
@@ -905,7 +922,6 @@
         cursor: pointer;
         border: 0px;
         background-color: white;
-        margin: 0px 5px 0px 0px;
         padding: 2px 4px 2px 4px;
         color: #048741;
         font-size: 15px;
@@ -915,9 +931,22 @@
         justify-content: center;
     }
 
+
+    .category_content_all_outdoor2 {
+        cursor: pointer;
+        border: 0px;
+        background-color: #048741;
+        padding: 2px 4px 2px 4px;
+        color: white;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
     .category_content_all_outdoor:hover {
         cursor: pointer;
-        /* background-color: #c5fad1; */
         border: 1.6px solid #4a4a4a;
     }
 
@@ -926,7 +955,19 @@
         border: 0px;
         background-color: white;
         color: #b809a0;
-        margin: 0px 5px 0px 0px;
+        padding: 2px 4px 2px 4px;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_fitness2 {
+        cursor: pointer;
+        border: 0px;
+        background-color: #b809a0;
+        color: white;
         padding: 2px 4px 2px 4px;
         font-size: 15px;
         font-weight: 700;
@@ -937,7 +978,6 @@
 
     .category_content_all_fitness:hover {
         cursor: pointer;
-        /* background-color: #fcb3f4; */
         border: 1.6px solid #4a4a4a;
     }
 
@@ -949,10 +989,9 @@
     }
 
     .category_content_group {
-        width: 24vw;
+        width: 21.5vw;
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
 
 
@@ -967,13 +1006,12 @@
     }
 
     .category_content_group_image>img {
-        height: 22px;
+        width: 20px;
         justify-content: center;
     }
 
     .category_content_pullBall>img {
         width: 17px;
-        /* filter: drop-shadow(0.5px 0.5px 0.5px #707070) */
     }
 }
 
@@ -987,30 +1025,59 @@
         z-index: 4;
     }
 
+    .category_member {
+        display: flex;
+        align-items: center;
+        margin: 38px 0px 0px 3vw;
+        cursor: pointer;
+    }
+
     .category_outside {
         display: flex;
         justify-content: center;
         width: 34vw;
-        /* background-color: #fafafa; */
         background-color: white;
     }
 
+
     .category_content_group_outside {
-        width: 28vw;
-        margin-left: 2vw;
+        width: 22.5vw;
+        margin-left: 3.5vw;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 18px 10px 8px;
-        border-radius: 25px;
+        padding: 10px 18px 10px 15px;
+        border-radius: 30px;
+    }
+
+    .category_content {
+        display: flex;
+        margin-left: 3vw;
+        margin-top: 15px;
+        font-family: Hind Madurai;
+        font-size: 20px;
+        font-weight: 700;
+        color: #a3a2a3;
+        letter-spacing: 3px;
+    }
+
+    .category_content_all {
+        display: flex;
+        width: 29vw;
+        align-items: center;
+        justify-content: space-around;
+        margin: 10px 0px 8px 3vw;
+        font-family: msjhbd;
+        font-size: 18px;
+        color: #2b2b2b;
+        letter-spacing: 2px;
+        font-weight: 500;
     }
 
     .category_content_all_ball {
         cursor: pointer;
-        margin: 0px 5px 0px 0px;
         border: 0px;
         background-color: white;
-        /* color: #f26e02; */
         color: #bf500b;
         font-size: 15px;
         font-weight: 700;
@@ -1030,7 +1097,6 @@
         cursor: pointer;
         border: 0px;
         background-color: white;
-        margin: 0px 5px 0px 0px;
         padding: 2px 4px 2px 4px;
         color: #1306c4;
         font-size: 15px;
@@ -1042,7 +1108,6 @@
 
     .category_content_all_water:hover {
         cursor: pointer;
-        /* background-color: #d9deff; */
         border: 1.6px solid #4a4a4a;
 
     }
@@ -1051,7 +1116,6 @@
         cursor: pointer;
         border: 0px;
         background-color: white;
-        margin: 0px 5px 0px 0px;
         padding: 2px 4px 2px 4px;
         color: #048741;
         font-size: 15px;
@@ -1063,7 +1127,6 @@
 
     .category_content_all_outdoor:hover {
         cursor: pointer;
-        /* background-color: #c5fad1; */
         border: 1.6px solid #4a4a4a;
     }
 
@@ -1072,7 +1135,6 @@
         border: 0px;
         background-color: white;
         color: #b809a0;
-        margin: 0px 5px 0px 0px;
         padding: 2px 4px 2px 4px;
         font-size: 15px;
         font-weight: 700;
@@ -1083,7 +1145,6 @@
 
     .category_content_all_fitness:hover {
         cursor: pointer;
-        /* background-color: #fcb3f4; */
         border: 1.6px solid #4a4a4a;
     }
 
@@ -1091,14 +1152,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 19.5vw;
+        width: 19.7vw;
     }
 
     .category_content_group {
-        width: 26vw;
+        width: 24vw;
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
 
 
@@ -1119,7 +1179,6 @@
     }
 
     .category_content_group_image>img {
-        height: 20px;
         justify-content: center;
     }
 
@@ -1143,6 +1202,19 @@
         z-index: 1;
     }
 
+    .category_content_all {
+        display: flex;
+        width: 65vw;
+        align-items: center;
+        justify-content: space-around;
+        margin: 10px 0px 8px 15vw;
+        font-family: msjhbd;
+        font-size: 18px;
+        color: #2b2b2b;
+        letter-spacing: 2px;
+        font-weight: 500;
+    }
+
     .category_outside {
         display: flex;
         justify-content: start;
@@ -1152,22 +1224,34 @@
     }
 
     .category_content_group_outside {
-        width: 62vw;
+        width: 60vw;
         margin-left: 18vw;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 18px 10px 8px;
-        border-radius: 25px;
+        padding: 10px 18px 10px 18px;
+        border-radius: 30px;
     }
 
     .category_content_all_ball {
         cursor: pointer;
-        margin: 0px 3vw 0px 0px;
         border: 0px;
         background-color: white;
         /* color: #f26e02; */
         color: #bf500b;
+        font-size: 20px;
+        font-weight: 700;
+        padding: 2px 4px 2px 4px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_ball2 {
+        cursor: pointer;
+        border: 0px;
+        background-color: #bf500b;
+        color: white;
         font-size: 20px;
         font-weight: 700;
         padding: 2px 4px 2px 4px;
@@ -1186,9 +1270,21 @@
         cursor: pointer;
         border: 0px;
         background-color: white;
-        margin: 0px 3vw 0px 0px;
         padding: 2px 4px 2px 4px;
         color: #1306c4;
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_water2 {
+        cursor: pointer;
+        border: 0px;
+        background-color: #1306c4;
+        padding: 2px 4px 2px 4px;
+        color: white;
         font-size: 20px;
         font-weight: 700;
         border-radius: 5px;
@@ -1203,11 +1299,23 @@
 
     }
 
+    .category_content_all_outdoor2 {
+        cursor: pointer;
+        border: 0px;
+        background-color: #048741;
+        padding: 2px 4px 2px 4px;
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
     .category_content_all_outdoor {
         cursor: pointer;
         border: 0px;
         background-color: white;
-        margin: 0px 3vw 0px 0px;
         padding: 2px 4px 2px 4px;
         color: #048741;
         font-size: 20px;
@@ -1228,7 +1336,19 @@
         border: 0px;
         background-color: white;
         color: #b809a0;
-        margin: 0px 3vw 0px 0px;
+        padding: 2px 4px 2px 4px;
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .category_content_all_fitness2 {
+        cursor: pointer;
+        border: 0px;
+        background-color: #b809a0;
+        color: white;
         padding: 2px 4px 2px 4px;
         font-size: 20px;
         font-weight: 700;
@@ -1247,14 +1367,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 48vw;
+        width: 49vw;
     }
 
     .category_content_group {
-        width: 65vw;
+        width: 62.5vw;
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
 
 
@@ -1275,13 +1394,11 @@
     }
 
     .category_content_group_image>img {
-        height: 25px;
         justify-content: center;
     }
 
     .category_content_pullBall>img {
         width: 20px;
-        /* filter: drop-shadow(0.5px 0.5px 0.5px #707070) */
     }
 
     .category_member_selfie {
