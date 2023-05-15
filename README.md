@@ -3,11 +3,11 @@
 </br>
 
 ## Check out your favorite group and interact with other members!
-![cover](./README-picture/cover.png)
+![cover](./README-picture/cover.jpg)
 </br>
 
 ## Created your own page!
-![mypage](./README-picture/mypage.png)
+![mypage](./README-picture/mypage.jpg)
 </br>
 
 ## DEMO 
