@@ -6,11 +6,11 @@
 ![cover](./README-picture/cover.jpg)
 </br>
 
-## Created your own page!
+## Create your exclusive page!
 ![mypage](./README-picture/mypage.jpg)
 </br>
 
-## DEMO 
+## DEMO Video
 [![Demo](./README-picture/demo.png)](https://www.youtube.com/watch?v=ZqFkhYww2gA&ab_channel=Z)
 
 
