@@ -11,7 +11,7 @@
 </br>
 
 ## Create your own page.
-![setting](./README-picture/setting.jpg.jpg)
+![setting](./README-picture/setting.jpg)
 </br>
 
 ## Check out other member's page.
