@@ -57,13 +57,11 @@ function APP() {
                     .then((url) => { setUrl(url); }
                     ).catch((error) => { })
                 const userDoc = doc(db, "users", data.uid);
-                const snapshot = onSnapshot(userDoc, (snapshot) => {
-                    getDoc(
-                        setUserName(snapshot.data().Name)
-                    );
+                onSnapshot(userDoc, (snapshot) => {
+                    setUserName(snapshot.data().Name)
                 });
             }
-            if (!data) { RequireAuth() }
+            if (!data) { setCurrentUser(false) }
         })
 
     }, [currentUser])
@@ -89,14 +87,14 @@ function APP() {
                                                         <Route path="/Mypage" element={<RequireAuth><Navbar /></RequireAuth>} />
                                                         <Route path="/Member" element={getMember ? <RequireAuth><Navbar /></RequireAuth> : <Navigate to="/Mypage" />} />
                                                         <Route path="/Setting" element={<RequireAuth><Navbar /></RequireAuth>} />
-                                                        <Route path="/Hiking" element={group ? <RequireAuth><Navbar /></RequireAuth> : <Navigate to="/Mypage" />} />
+                                                        <Route path="/Home" element={group ? <RequireAuth><Navbar /></RequireAuth> : <Navigate to="/Mypage" />} />
                                                     </Routes>
                                                     <dataContext.Provider value={{ value, setValue }}>
                                                         <Routes>
                                                             <Route path="/Mypage" element={<RequireAuth><MyPage /></RequireAuth>} />
                                                             <Route path="/Member" element={getMember ? <RequireAuth><Member /></RequireAuth> : <Navigate to="/Mypage" />} />
                                                             <Route path="/Setting" element={<RequireAuth><Setting /></RequireAuth>} />
-                                                            <Route path="/Hiking" element={group ? <RequireAuth><Home /></RequireAuth> : <Navigate to="/Mypage" />} />
+                                                            <Route path="/Home" element={group ? <RequireAuth><Home /></RequireAuth> : <Navigate to="/Mypage" />} />
                                                         </Routes>
                                                     </dataContext.Provider>
                                                 </imageContext.Provider>

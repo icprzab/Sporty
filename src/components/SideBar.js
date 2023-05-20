@@ -29,7 +29,7 @@ function SideBar() {
         setGroup(data)
         setDisplaySidebar(false)
         sessionStorage.setItem("bottom", "")
-        navigate("/Hiking")
+        navigate("/Home")
     }
     function Me() {
         setDisplaySidebar(false)
