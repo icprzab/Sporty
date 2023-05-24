@@ -72,10 +72,10 @@ function Navbar() {
         if (e.target.files[0]) {
             setImage(e.target.files[0])
             const reader = new FileReader();
+            reader.readAsDataURL(e.target.files[0]);
             reader.onload = (e) => {
                 setPreviewUrl(e.target.result);
             };
-            reader.readAsDataURL(e.target.files[0]);
         }
     }
 
@@ -259,7 +259,6 @@ function Navbar() {
                             </div>
                         </form>
                         <div className="top_button">
-                            {/* <button className="notification"><img className="notification_home" src={home} onClick={ToHome} /></button> */}
                             <button className="notification_add"><img src={add} onClick={showPost} /></button>
                             <button className="notification_bell"><img src={bell} /></button>
                             <button className="notification_mail"><img src={mail} /></button>

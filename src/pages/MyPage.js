@@ -107,10 +107,10 @@ function MyPage() {
     useEffect(() => {
         refs.current = Array(posts.length)
             .fill()
-            .map((_, i) => refs.current[i] || React.createRef());
+            .map((_, i) => refs.current[i]);
         EditRefs.current = Array(posts.length)
             .fill()
-            .map((_, i) => refs.current[i] || React.createRef());
+            .map((_, i) => refs.current[i]);
     }, [posts.length]);
 
     useEffect(() => {
@@ -121,7 +121,6 @@ function MyPage() {
                 }
             }
         }
-
         document.addEventListener('mousedown', handleClickOutside)
         return () => {
             document.removeEventListener('mousedown', handleClickOutside)
@@ -839,7 +838,7 @@ function MyPage() {
                                                     {posts.length !== 0 ?
                                                         <div>
                                                             {posts.map((post, index) =>
-                                                                <div className={styles.under_left_content} key={index} >
+                                                                < div className={styles.under_left_content} key={index} >
                                                                     <div ref={el => refs.current[index] = el} className={displayButton.includes(post.id) ? styles.under_left_content_edit_outside : styles.under_left_content_edit_outside_none}>
                                                                         <button onClick={() => showEdit(post, index)}>編輯</button>
                                                                         <button onClick={() => deletePost(post)}>刪除</button>

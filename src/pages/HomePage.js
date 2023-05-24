@@ -345,7 +345,6 @@ function Home() {
                 setShowText(deleteShowText)
                 setShowLess(deleteShowLess)
             }
-
         }
     }, [commentPage])
 
