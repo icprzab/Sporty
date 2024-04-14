@@ -35,7 +35,6 @@ function Navbar() {
     const { currentUser, setCurrentUser } = useContext(AuthContext);
     const { userName, setUserName } = useContext(NameContext);
     const [image, setImage] = useState("")
-    const [imageName, setImageName] = useState("")
     const [displayNotice, setDisplayNotice] = useState(false)
     const [type, setType] = useState("")
     const [previewUrl, setPreviewUrl] = useState("");

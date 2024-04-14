@@ -102,7 +102,6 @@ function Register() {
                         }
                     });
                     await createUserDocument(user, { name }, { password }, "女生")
-
                     setName("");
                     setEmail("");
                     setPassword("");
@@ -113,7 +112,6 @@ function Register() {
             }
         }
     }
-
 
     function inputMale(e) {
         setMale(e.target.value);

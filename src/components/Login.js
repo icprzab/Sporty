@@ -81,12 +81,12 @@ function Login() {
                     </div>
                     <div className="middle_content_form_outside">
                         <form className="middle_content_form" onSubmit={handleSubmit}>
-                            <input className="middle_content_form_input" type="text" placeholder="請輸入Email帳號" value={email} onChange={inputEmail}></input>
+                            <input className="middle_content_form_input" type="text" placeholder="測試帳號 test@gmail.com" value={email} onChange={inputEmail}></input>
                             <div>
                                 <div className={displayEmail ? "middle_content_form_input_text active" : "middle_content_form_input_text"}>{noticeEmail}</div>
                             </div>
 
-                            <input className="middle_content_form_input" type="password" placeholder="請輸入密碼" value={password} onChange={inputPassword}></input>
+                            <input className="middle_content_form_input" type="password" placeholder="測試密碼 testtest" value={password} onChange={inputPassword}></input>
                             <div>
                                 <div className={displayPassword ? "middle_content_form_input_text active" : "middle_content_form_input_text"}>{noticePassword}</div>
                             </div>
